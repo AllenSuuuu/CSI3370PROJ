@@ -1,3 +1,5 @@
+res://Spike.tscn
+res://Spike.gd
 res://world.tscn
-res://Player/Player.gd
 res://main.tscn
+res://Frog.tscn

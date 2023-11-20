@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://vkkjlktu4wfp"]
+
+[ext_resource type="Script" path="res://Spike.gd" id="1_jf7un"]
+[ext_resource type="Texture2D" uid="uid://bcflgp4hpeahq" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/spikes.png" id="2_bm3c8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qgrt"]
+size = Vector2(16, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vedoj"]
+size = Vector2(16, 9)
+
+[node name="Spike" type="CharacterBody2D"]
+script = ExtResource("1_jf7un")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7qgrt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+texture = ExtResource("2_bm3c8")
+
+[node name="DamageBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_vedoj")
+
+[connection signal="body_entered" from="DamageBox" to="." method="_on_damage_box_body_entered"]
