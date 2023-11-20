@@ -1,14 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700072336
+::res://::1700522187
 BG.gd::GDScript::-1::1699987384::0::1::::<>ParallaxBackground<>::
 BG.tscn::PackedScene::2262312464235545552::1699990732::0::1::::<><>::res://BG.gd<>uid://cb5suyu343d1n
 Frog.gd::GDScript::-1::1699987384::0::1::::<>CharacterBody2D<>::
 Frog.tscn::PackedScene::2052889069840593964::1699990732::0::1::::<><>::uid://dqn66wsdxt4hv
 icon.svg::CompressedTexture2D::865371698210220884::1699987385::1700072148::1::::<><>::
 main.gd::GDScript::-1::1699990732::0::1::::<>Node2D<>::
-main.tscn::PackedScene::2880387758262070191::1699990732::0::1::::<><>::res://main.gd<>uid://7h47q4d1xsps
+main.tscn::PackedScene::2880387758262070191::1700075910::0::1::::<><>::res://main.gd<>uid://7h47q4d1xsps::::res://BG.tscn
 README.md::TextFile::-1::1699987384::0::1::::<><>::
-world.tscn::PackedScene::3302732010777028173::1699990732::0::1::::<><>::uid://riq0bcd0ldar
+world.tscn::PackedScene::3302732010777028173::1700076042::0::1::::<><>::uid://riq0bcd0ldar::::res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png<>res://BG.gd<>uid://c8vn4jjs2dg0u::::res://Player/Player.tscn<>uid://cb5suyu343d1n::::res://sunny-land-phaser-project/sunny-land/assets/environment/back.png<>uid://4io1vg8e1cwi::::res://Frog.tscn<>uid://t81qnj8w2g80::::res://Sunny Land houses/Sunny Land Trees Props Pack/Props PNG/rock-1.png<>uid://cup5m26y8iltx::::res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/rock.png<>uid://sknwnos3l5cq::::res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/shrooms.png<>uid://bcflgp4hpeahq::::res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/spikes.png<>uid://c1prr102gepcv::::res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/gem/gem-5.png<>uid://b0pbe04urp4vm::::res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/crate.png
 ::res://Collectables/::1699987384
 Cherry.tscn::PackedScene::711660153398299726::1699987384::0::1::::<><>::uid://b62g1anf42d6r
 ::res://Global/::1699987384
