@@ -480,15 +480,25 @@ script/source = "extends Node2D
 
 
 var Cherry = preload(\"res://Collectables/Cherry.tscn\")
+@onready var timer = get_node(\"Timer\")
+
+var MAX_CHERRIES : int = 3
 
 
+
+var cherryCounter : int = 0
 
 func _on_timer_timeout():
-	var cherryTemp = Cherry.instantiate()
-	var rng = RandomNumberGenerator.new()
-	var ranint = rng.randi_range(10, 400)
-	cherryTemp.position = Vector2(ranint, 296)
-	get_node(\"Node2D\").add_child(cherryTemp)
+	if (cherryCounter < MAX_CHERRIES):
+		var cherryTemp = Cherry.instantiate()
+		var rng = RandomNumberGenerator.new()
+		var ranint = rng.randi_range(10, 400)
+		cherryTemp.position = Vector2(ranint, 296)
+		get_node(\"Node2D\").add_child(cherryTemp)
+		cherryCounter += 1
+	else:
+		timer.queue_free()
+	print(cherryCounter)
 "
 
 [node name="World" type="Node2D"]
