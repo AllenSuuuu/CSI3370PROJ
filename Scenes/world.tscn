@@ -498,7 +498,6 @@ func _on_timer_timeout():
 		cherryCounter += 1
 	else:
 		timer.queue_free()
-	print(cherryCounter)
 "
 
 [node name="World" type="Node2D"]
