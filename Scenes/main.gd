@@ -3,6 +3,12 @@ extends Node2D
 
 
 
+func _input(event : InputEvent):
+	if (event.is_action_pressed("Escape")):
+		print(get_tree().paused)
+	
+	pass
+
 func _ready():
 	Utils.saveGame()
 	Utils.loadGame()
