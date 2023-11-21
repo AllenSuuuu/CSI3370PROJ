@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://t81qnj8w2g80" path="res://Sunny Land houses/Sunny Land Trees Props Pack/Props PNG/rock-1.png" id="6_7ggas"]
 [ext_resource type="Texture2D" uid="uid://cup5m26y8iltx" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/rock.png" id="7_yqoex"]
 [ext_resource type="Texture2D" uid="uid://sknwnos3l5cq" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/shrooms.png" id="8_qcbxd"]
-[ext_resource type="Texture2D" uid="uid://c1prr102gepcv" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/gem/gem-5.png" id="10_h1d8u"]
 [ext_resource type="Texture2D" uid="uid://b0pbe04urp4vm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/crate.png" id="11_w84k3"]
 [ext_resource type="PackedScene" uid="uid://vkkjlktu4wfp" path="res://Spike.tscn" id="12_o70qa"]
+[ext_resource type="PackedScene" uid="uid://4koc6lt3jsh1" path="res://Gem.tscn" id="12_pbjxa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqah2"]
 texture = ExtResource("1_al0a7")
@@ -591,10 +591,6 @@ position = Vector2(2517, 649)
 scale = Vector2(0.365, 0.365)
 texture = ExtResource("6_7ggas")
 
-[node name="Gem-5" type="Sprite2D" parent="Environment"]
-position = Vector2(2188, 475)
-texture = ExtResource("10_h1d8u")
-
 [node name="Rock-3" type="Sprite2D" parent="Environment"]
 modulate = Color(1, 1, 1, 0.623529)
 position = Vector2(2384, 462)
@@ -618,13 +614,17 @@ position = Vector2(1970, 650)
 scale = Vector2(0.81, 0.81)
 texture = ExtResource("11_w84k3")
 
-[node name="Spike" parent="." instance=ExtResource("12_o70qa")]
+[node name="Spike" parent="Environment" instance=ExtResource("12_o70qa")]
 position = Vector2(2200, 673)
 
-[node name="Spike2" parent="." instance=ExtResource("12_o70qa")]
+[node name="Spike2" parent="Environment" instance=ExtResource("12_o70qa")]
 position = Vector2(2232, 673)
 
-[node name="Spike3" parent="." instance=ExtResource("12_o70qa")]
+[node name="Spike3" parent="Environment" instance=ExtResource("12_o70qa")]
 position = Vector2(2216, 673)
+
+[node name="Gem" parent="Environment" instance=ExtResource("12_pbjxa")]
+position = Vector2(2188, 475)
+scale = Vector2(1.25, 1.25)
 
 [connection signal="timeout" from="Collectables/Timer" to="Collectables" method="_on_timer_timeout"]

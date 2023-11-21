@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv0wrkldigmmq"
-path="res://.godot/imported/player-climb.png-7dc4baa125369cb0e990560b64c66da6.ctex"
+path="res://.godot/imported/player-climb.png-115b235132653493178fdbf318310214.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/player-climb.png"
-dest_files=["res://.godot/imported/player-climb.png-7dc4baa125369cb0e990560b64c66da6.ctex"]
+source_file="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/spritesheets/player-climb.png"
+dest_files=["res://.godot/imported/player-climb.png-115b235132653493178fdbf318310214.ctex"]
 
 [params]
 

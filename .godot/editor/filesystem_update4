@@ -1,5 +1,8 @@
-res://Spike.tscn
-res://Spike.gd
-res://world.tscn
+res://Gem.tscn
+res://Gem.gd
 res://main.tscn
+res://world.tscn
 res://Frog.tscn
+res://Spike.tscn
+res://BG.tscn
+res://Collectables/Cherry.tscn
