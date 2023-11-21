@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://dqn66wsdxt4hv" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-idle.png" id="1_04jnr"]
 [ext_resource type="Texture2D" uid="uid://cxoq4mfrpsym5" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/enemy-deadth.png" id="1_7y4t8"]
-[ext_resource type="Script" path="res://Frog.gd" id="1_h1wq8"]
+[ext_resource type="Script" path="res://Entities/Frog.gd" id="1_h1wq8"]
 [ext_resource type="Texture2D" uid="uid://bw4qle7spso3u" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0001.png" id="4_m16s5"]
 [ext_resource type="Texture2D" uid="uid://bgy5ukvdmecc8" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0002.png" id="5_rwmkl"]
 [ext_resource type="Texture2D" uid="uid://cybuw16qx007k" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0003.png" id="6_1nxnw"]
 [ext_resource type="Texture2D" uid="uid://bclp70gben0wb" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0004.png" id="7_6qmbl"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5r6w0"]
 size = Vector2(18.094, 19.4087)

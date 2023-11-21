@@ -6,3 +6,8 @@ res://Frog.tscn
 res://Spike.tscn
 res://BG.tscn
 res://Collectables/Cherry.tscn
+res://Collectables/Gem.tscn
+res://Scenes/main.tscn
+res://Scenes/world.tscn
+res://Scenes/main.gd
+res://Player/Player.gd

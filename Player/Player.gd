@@ -41,4 +41,4 @@ func _physics_process(delta):
 	
 	if Game.playerHP <= 0:
 		queue_free()
-		get_tree().change_scene_to_file("res://main.tscn")
+		get_tree().change_scene_to_file("res://Scenes/main.tscn")
