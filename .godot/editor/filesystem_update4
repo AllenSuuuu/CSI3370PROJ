@@ -6,3 +6,4 @@ res://Collectables/Gem.tscn
 res://Scenes/main.gd
 res://Scenes/GameController.gd
 res://Scenes/PauseMenu.gd
+res://Entities/Frog.gd

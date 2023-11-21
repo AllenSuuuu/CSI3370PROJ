@@ -7,6 +7,8 @@ var chase = false
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
+
+
 func _physics_process(delta):
 	#Gravity for Frog
 	velocity.y += gravity * delta
@@ -39,10 +41,23 @@ func _on_player_detection_body_exited(body):
 func _on_player_death_body_entered(body):
 	if body.name == "Player":
 		death()
+
+
 func _on_player_collison_body_entered(body):
 	if body.name == "Player":
 		Game.playerHP -= 3
+		
+		#Character blinks when they are damaged
+		var player = get_node("../../Player/Player")
+		var tween = get_tree().create_tween()
+		tween.tween_property(player, "modulate:a", 0, 0.25)
+		tween.tween_property(player, "modulate:a", 1, 0.25)
+		tween.tween_property(player, "modulate:a", 0, 0.25)
+		tween.tween_property(player, "modulate:a", 1, 0.25)
+		
 		death()
+
+
 func death():
 	Game.Gold += 5
 	Utils.saveGame()
