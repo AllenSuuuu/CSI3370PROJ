@@ -7,3 +7,5 @@ res://Scenes/main.gd
 res://Scenes/GameController.gd
 res://Scenes/PauseMenu.gd
 res://Entities/Frog.gd
+res://Global/Utils.gd
+res://Environment/Spike.gd

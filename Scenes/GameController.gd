@@ -26,3 +26,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func damagePlayer(damage : int):
+	Game.playerHP -= damage
+		
+	#Character blinks when they are damaged
+	var player = get_node("Game/Player/Player")
+	var tween = get_tree().create_tween()
+	tween.tween_property(player, "modulate:a", 0, 0.25)
+	tween.tween_property(player, "modulate:a", 1, 0.25)
+	tween.tween_property(player, "modulate:a", 0, 0.25)
+	tween.tween_property(player, "modulate:a", 1, 0.25)
+		
+	pass

@@ -5,7 +5,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player
 var chase = false
 
+var controller
+
 func _ready():
+	controller = get_node("../../..")
 	get_node("AnimatedSprite2D").play("Idle")
 
 
@@ -45,15 +48,7 @@ func _on_player_death_body_entered(body):
 
 func _on_player_collison_body_entered(body):
 	if body.name == "Player":
-		Game.playerHP -= 3
-		
-		#Character blinks when they are damaged
-		var player = get_node("../../Player/Player")
-		var tween = get_tree().create_tween()
-		tween.tween_property(player, "modulate:a", 0, 0.25)
-		tween.tween_property(player, "modulate:a", 1, 0.25)
-		tween.tween_property(player, "modulate:a", 0, 0.25)
-		tween.tween_property(player, "modulate:a", 1, 0.25)
+		controller.damagePlayer(3)
 		
 		death()
 
