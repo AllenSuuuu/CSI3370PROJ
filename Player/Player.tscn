@@ -1,15 +1,17 @@
-[gd_scene load_steps=26 format=3 uid="uid://c8vn4jjs2dg0u"]
+[gd_scene load_steps=28 format=3 uid="uid://c8vn4jjs2dg0u"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_m3tp6"]
-[ext_resource type="Texture2D" uid="uid://cig0u3xogo10h" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-1.png" id="1_neih5"]
 [ext_resource type="Texture2D" uid="uid://dkk0ghojesq80" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/player-hurt.png" id="1_wuvcd"]
-[ext_resource type="Texture2D" uid="uid://btdvb1b5bbpnr" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-2.png" id="2_hgyrf"]
-[ext_resource type="Texture2D" uid="uid://dnqdo4gkdmyte" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-3.png" id="3_w8kvc"]
-[ext_resource type="Texture2D" uid="uid://ce3li46886m1a" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-4.png" id="4_fx1q8"]
+[ext_resource type="Texture2D" uid="uid://c0aewjct3lg72" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/attack/untitled_0001.png" id="2_4dmvq"]
+[ext_resource type="Texture2D" uid="uid://ny8sidqjaksk" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/attack/untitled_0002.png" id="3_6t3lx"]
+[ext_resource type="Texture2D" uid="uid://cs2s6pnoi1xsk" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/attack/untitled_0003.png" id="4_uwjdi"]
 [ext_resource type="Texture2D" uid="uid://qmpx1ixk5rf1" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/jump/player-jump-1.png" id="5_8ttsh"]
+[ext_resource type="Texture2D" uid="uid://bl2ti1qh10bdi" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/attack/untitled_0004.png" id="5_ibchp"]
 [ext_resource type="Texture2D" uid="uid://d21lbqfrjjl2e" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/jump/player-jump-2.png" id="6_ji3q0"]
 [ext_resource type="Texture2D" uid="uid://t8l4la3kkean" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-1.png" id="7_8y80i"]
+[ext_resource type="Texture2D" uid="uid://moj4lf26h8am" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/idle_0001.png" id="7_lpfyp"]
 [ext_resource type="Texture2D" uid="uid://bub21s8jlncpm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-2.png" id="8_oj4o2"]
+[ext_resource type="Texture2D" uid="uid://m3feo462fcmu" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/idle_0002.png" id="8_wqyye"]
 [ext_resource type="Texture2D" uid="uid://dp6r1f8407x3c" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-3.png" id="9_8okor"]
 [ext_resource type="Texture2D" uid="uid://b0bdxn2mtmtrr" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-4.png" id="10_mvwid"]
 [ext_resource type="Texture2D" uid="uid://b7wk2cvk8l5wo" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-5.png" id="11_iotgn"]
@@ -30,6 +32,23 @@ region = Rect2(33, 0, 33, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_3ltfp"]
 animations = [{
 "frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_4dmvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6t3lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uwjdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ibchp")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 7.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jy7tx")
 }, {
@@ -42,20 +61,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_neih5")
+"texture": ExtResource("7_lpfyp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_hgyrf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_w8kvc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_fx1q8")
+"texture": ExtResource("8_wqyye")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -89,6 +102,16 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_1",
 "speed": 5.0
 }]
 
@@ -244,7 +267,6 @@ shape = SubResource("CapsuleShape2D_eawrj")
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_3ltfp")
 animation = &"Idle"
-frame = 1
 flip_h = true
 metadata/_edit_lock_ = true
 

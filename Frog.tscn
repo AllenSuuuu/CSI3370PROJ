@@ -3,10 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dqn66wsdxt4hv" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-idle.png" id="1_04jnr"]
 [ext_resource type="Texture2D" uid="uid://cxoq4mfrpsym5" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/enemy-deadth.png" id="1_7y4t8"]
 [ext_resource type="Script" path="res://Frog.gd" id="1_h1wq8"]
-[ext_resource type="Texture2D" uid="uid://0vxg673nr403" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-jump.png" id="2_ux3b5"]
+[ext_resource type="Texture2D" uid="uid://bw4qle7spso3u" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0001.png" id="4_m16s5"]
+[ext_resource type="Texture2D" uid="uid://bgy5ukvdmecc8" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0002.png" id="5_rwmkl"]
+[ext_resource type="Texture2D" uid="uid://cybuw16qx007k" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0003.png" id="6_1nxnw"]
+[ext_resource type="Texture2D" uid="uid://bclp70gben0wb" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0004.png" id="7_6qmbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5r6w0"]
-size = Vector2(21, 11)
+size = Vector2(18.094, 19.4087)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pws8d"]
 atlas = ExtResource("1_7y4t8")
@@ -47,18 +50,6 @@ region = Rect2(70, 0, 35, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_aekwx"]
 atlas = ExtResource("1_04jnr")
 region = Rect2(105, 0, 35, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ponwl"]
-atlas = ExtResource("2_ux3b5")
-region = Rect2(0, 0, 35, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oktuq"]
-atlas = ExtResource("2_ux3b5")
-region = Rect2(35, 0, 35, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_db74h"]
-atlas = ExtResource("2_ux3b5")
-region = Rect2(70, 0, 35, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tj84u"]
 animations = [{
@@ -125,13 +116,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ponwl")
+"texture": ExtResource("4_m16s5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oktuq")
+"texture": ExtResource("5_rwmkl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_db74h")
+"texture": ExtResource("6_1nxnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6qmbl")
 }],
 "loop": true,
 "name": &"Jump",
@@ -142,38 +136,43 @@ animations = [{
 radius = 163.11
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24n46"]
-size = Vector2(21, 17.5)
+size = Vector2(16.6105, 25.1757)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpeci"]
-size = Vector2(25, 9.5)
+size = Vector2(25, 31)
 
 [node name="Frog" type="CharacterBody2D"]
 script = ExtResource("1_h1wq8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -5.5)
+position = Vector2(0.5, -8.5)
+scale = Vector2(1.05007, 1.49417)
 shape = SubResource("RectangleShape2D_5r6w0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
+scale = Vector2(-0.988559, 1.03367)
 sprite_frames = SubResource("SpriteFrames_tj84u")
-animation = &"Idle"
+animation = &"Jump"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_0pjvl")
 
 [node name="PlayerDeath" type="Area2D" parent="."]
+scale = Vector2(-0.678787, 1.49181)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
-position = Vector2(0, -8)
+position = Vector2(-0.736608, -6.36811)
+scale = Vector2(2.2173, 0.825405)
 shape = SubResource("RectangleShape2D_24n46")
 
 [node name="PlayerCollison" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollison"]
-position = Vector2(-0.5, -4.25)
+position = Vector2(0.5, -9.5)
 shape = SubResource("RectangleShape2D_qpeci")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
