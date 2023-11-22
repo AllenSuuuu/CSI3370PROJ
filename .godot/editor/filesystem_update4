@@ -1,13 +1,7 @@
 res://Scenes/world.tscn
-res://Scenes/world.gd
+res://Player/Player.gd
 res://Scenes/main.tscn
 res://Collectables/Cherry.tscn
 res://Collectables/Gem.tscn
-res://Scenes/main.gd
-res://Scenes/GameController.gd
-res://Scenes/PauseMenu.gd
-res://Entities/Frog.gd
-res://Global/Utils.gd
-res://Environment/Spike.gd
 res://Entities/Frog.tscn
-res://Scenes/CloseDungeonTrigger.gd
+res://Player/Player.tscn

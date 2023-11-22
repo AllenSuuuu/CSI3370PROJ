@@ -267,6 +267,7 @@ shape = SubResource("CapsuleShape2D_eawrj")
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_3ltfp")
 animation = &"Idle"
+frame = 1
 flip_h = true
 metadata/_edit_lock_ = true
 
