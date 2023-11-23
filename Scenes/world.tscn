@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=23 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_bnns0"]
 [ext_resource type="Texture2D" uid="uid://riq0bcd0ldar" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_ccixb"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://vkkjlktu4wfp" path="res://Environment/Spike.tscn" id="10_4pyus"]
 [ext_resource type="PackedScene" uid="uid://4koc6lt3jsh1" path="res://Collectables/Gem.tscn" id="11_usxo2"]
 [ext_resource type="Script" path="res://Scenes/CloseDungeonTrigger.gd" id="15_tu3ih"]
+[ext_resource type="PackedScene" uid="uid://3s5qbjj8pmnp" path="res://Collectables/DoubleJumpBoots.tscn" id="16_tku4r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqah2"]
 texture = ExtResource("1_ccixb")
@@ -709,6 +710,9 @@ script = ExtResource("15_tu3ih")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseDungeonTrigger"]
 shape = SubResource("RectangleShape2D_8cqnq")
+
+[node name="DoubleJumpBoots" parent="." instance=ExtResource("16_tku4r")]
+position = Vector2(170, 297)
 
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="GameController/Game/UI/PauseMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ReturnToMenuButton" to="GameController/Game/UI/PauseMenu" method="_on_return_to_menu_button_pressed"]

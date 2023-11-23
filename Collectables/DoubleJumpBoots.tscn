@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://3s5qbjj8pmnp"]
+
+[ext_resource type="Script" path="res://Collectables/DoubleJumpBoots.gd" id="1_dkix4"]
+[ext_resource type="Texture2D" uid="uid://cr6p3q25ragq2" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/block.png" id="2_3euqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m34e"]
+size = Vector2(16, 16)
+
+[node name="DoubleJumpBoots" type="Area2D"]
+script = ExtResource("1_dkix4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5m34e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+
+[node name="Block" type="Sprite2D" parent="."]
+texture = ExtResource("2_3euqu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

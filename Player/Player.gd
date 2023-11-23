@@ -22,7 +22,7 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 			anim.play("Jump")
 	else:
-		if (canDoubleJump):
+		if (canDoubleJump && Game.hasJumpBoots):
 			if (Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("W") || Input.is_action_just_pressed("Space")):
 				velocity.y = JUMP_VELOCITY
 				anim.play("Jump")
@@ -44,7 +44,10 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.y == 0:
-			anim.play("Idle")
+			if (Input.is_action_pressed("Attack")):
+				anim.play("Attack")
+			else:
+				anim.play("Idle")
 	if velocity.y > 0:
 		anim.play("Fall")
 	move_and_slide()
