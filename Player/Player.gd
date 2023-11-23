@@ -54,9 +54,21 @@ func _physics_process(delta):
 	
 	
 	if Game.playerHP <= 0:
-		queue_free()
-		get_tree().change_scene_to_file("res://Scenes/main.tscn")
+		var checkpoint = Game.currentCheckpoint
+		
+		if (checkpoint == null):
+			queue_free()
+			get_tree().change_scene_to_file("res://Scenes/main.tscn")
+		else:
+			goToCheckpoint(checkpoint)
+		
 		Game.playerHP = 10
 		Game.Gold = 0
+		
 	
+	pass
+
+func goToCheckpoint(checkpoint : Area2D):
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", Game.currentCheckpoint.position, 0)
 	pass

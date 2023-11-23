@@ -1,12 +1,8 @@
-res://Scenes/world.tscn
-res://Scenes/main.tscn
-res://Collectables/Cherry.tscn
-res://Collectables/Gem.tscn
-res://Entities/Frog.tscn
 res://Player/Player.tscn
 res://Player/Player.gd
-res://Collectables/DoubleJumpBoots.gd
+res://Collectables/Gem.tscn
 res://Collectables/DoubleJumpBoots.tscn
-res://Scenes/GameController.gd
-res://Scenes/PauseMenu.gd
+res://Scenes/world.tscn
+res://Entities/Checkpoint.tscn
+res://Entities/Checkpoint.gd
 res://Global/Game.gd
