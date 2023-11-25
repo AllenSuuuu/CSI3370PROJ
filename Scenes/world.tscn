@@ -716,7 +716,8 @@ shape = SubResource("RectangleShape2D_8cqnq")
 position = Vector2(170, 297)
 
 [node name="Checkpoint" parent="." instance=ExtResource("17_iv304")]
-position = Vector2(450, 294)
+position = Vector2(2646, 294)
+scale = Vector2(4.05, 29.38)
 
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="GameController/Game/UI/PauseMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ReturnToMenuButton" to="GameController/Game/UI/PauseMenu" method="_on_return_to_menu_button_pressed"]

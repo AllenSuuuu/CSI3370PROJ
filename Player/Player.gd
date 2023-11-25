@@ -64,6 +64,7 @@ func _physics_process(delta):
 		
 		Game.playerHP = 10
 		Game.Gold = 0
+		Game.hasJumpBoots = false
 		
 	
 	pass
