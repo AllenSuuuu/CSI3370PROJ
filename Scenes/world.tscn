@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/BG.gd" id="2_be166"]
 [ext_resource type="Texture2D" uid="uid://cb5suyu343d1n" path="res://sunny-land-phaser-project/sunny-land/assets/environment/back.png" id="3_l5iw5"]
 [ext_resource type="PackedScene" uid="uid://c8vn4jjs2dg0u" path="res://Player/Player.tscn" id="4_0addx"]
-[ext_resource type="PackedScene" uid="uid://4io1vg8e1cwi" path="res://Entities/Frog.tscn" id="5_e1p1f"]
+[ext_resource type="PackedScene" uid="uid://4io1vg8e1cwi" path="res://Entities/Zombie.tscn" id="5_e1p1f"]
 [ext_resource type="Texture2D" uid="uid://t81qnj8w2g80" path="res://Sunny Land houses/Sunny Land Trees Props Pack/Props PNG/rock-1.png" id="6_sy7jx"]
 [ext_resource type="Texture2D" uid="uid://cup5m26y8iltx" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/rock.png" id="7_af53x"]
 [ext_resource type="Script" path="res://Scenes/PauseMenu.gd" id="8_cbtyc"]
