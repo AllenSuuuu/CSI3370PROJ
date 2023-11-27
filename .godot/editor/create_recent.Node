@@ -1,6 +1,7 @@
+AnimatedSprite2D
 CollisionShape2D
 Area2D
-AnimatedSprite2D
+CharacterBody2D
 Button
 Label
 VBoxContainer
@@ -8,4 +9,3 @@ Control
 MarginContainer
 Node
 Sprite2D
-CharacterBody2D

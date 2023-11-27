@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=25 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_bnns0"]
 [ext_resource type="Texture2D" uid="uid://riq0bcd0ldar" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_ccixb"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Scenes/CloseDungeonTrigger.gd" id="15_tu3ih"]
 [ext_resource type="PackedScene" uid="uid://3s5qbjj8pmnp" path="res://Collectables/DoubleJumpBoots.tscn" id="16_tku4r"]
 [ext_resource type="PackedScene" uid="uid://bjjb5edqxakaj" path="res://Entities/Checkpoint.tscn" id="17_iv304"]
+[ext_resource type="PackedScene" uid="uid://b2uud5dxlbnsa" path="res://Entities/Boss.tscn" id="18_vbwru"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqah2"]
 texture = ExtResource("1_ccixb")
@@ -556,6 +557,9 @@ position = Vector2(848, 144)
 
 [node name="Frog6" parent="GameController/Game/Mobs" instance=ExtResource("5_e1p1f")]
 position = Vector2(1389, 61)
+
+[node name="Boss" parent="GameController/Game/Mobs" instance=ExtResource("18_vbwru")]
+position = Vector2(106, 287.085)
 
 [node name="UI" type="CanvasLayer" parent="GameController/Game"]
 
