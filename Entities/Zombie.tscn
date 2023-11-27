@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://4io1vg8e1cwi"]
+[gd_scene load_steps=23 format=3 uid="uid://bsf322qs0134a"]
 
 [ext_resource type="Texture2D" uid="uid://dqn66wsdxt4hv" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-idle.png" id="1_04jnr"]
 [ext_resource type="Texture2D" uid="uid://cxoq4mfrpsym5" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/enemy-deadth.png" id="1_7y4t8"]
