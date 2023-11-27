@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var SPEED = 150
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var potionScene = preload("res://Entities/Potion.tscn")
 var player
 var controller
 var chase = false
@@ -17,7 +18,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#Gravity for Frog
+	#Gravity
 	velocity.y += gravity * delta
 	if chase == true:
 		if get_node("AnimatedSprite2D").animation != "Death":
@@ -28,7 +29,7 @@ func _process(delta):
 			get_node("AnimatedSprite2D").flip_h = true
 		else:
 			get_node("AnimatedSprite2D").flip_h = false
-		velocity.x = direction.x * SPEED
+		#velocity.x = direction.x * SPEED
 	else:
 		if get_node("AnimatedSprite2D").animation != "Death":
 			get_node("AnimatedSprite2D").play("Idle")
@@ -41,6 +42,7 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		chase = true
+		spawnPotion()
 	
 	pass # Replace with function body.
 
@@ -50,3 +52,12 @@ func _on_area_2d_body_exited(body):
 		chase = false
 	
 	pass # Replace with function body.
+
+
+func spawnPotion():
+	var potInstance = potionScene.instantiate()
+	potInstance.position = position
+	potInstance.position.y -= 50
+	get_parent().add_child(potInstance)
+	
+	pass

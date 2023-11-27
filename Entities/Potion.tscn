@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfkv54ecvnm53"]
+
+[ext_resource type="Texture2D" uid="uid://cr6p3q25ragq2" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/block.png" id="2_3k50c"]
+
+[sub_resource type="GDScript" id="GDScript_78wl4"]
+script/source = "extends CharacterBody2D
+
+var SPEED = 150
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+var player
+var vel
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	player = get_node(\"../../Player/Player\")
+	velocity = Vector2(player.position.x - self.position.x, -500)
+	
+	pass # Replace with function body.
+
+#var target = player.position
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	#gravity
+	velocity.y += gravity * delta
+	
+	#transform.origin += Vector2(0 - target, -500) * delta
+	
+	if (self.is_on_floor()):
+		self.queue_free()
+	
+	move_and_slide()
+	
+	pass
+
+
+func _on_area_2d_body_entered(body):
+	if (body.name == \"Player\"):
+		self.queue_free()
+	
+	pass # Replace with function body.
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fl2qt"]
+radius = 6.08276
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kare5"]
+radius = 6.0
+
+[node name="Potion" type="CharacterBody2D"]
+script = SubResource("GDScript_78wl4")
+
+[node name="Block" type="Sprite2D" parent="."]
+texture = ExtResource("2_3k50c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fl2qt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kare5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,8 +1,9 @@
+res://Entities/Potion.tscn
 res://Collectables/Gem.tscn
 res://Collectables/DoubleJumpBoots.tscn
-res://Player/Player.tscn
 res://Entities/Checkpoint.tscn
-res://Scenes/world.tscn
 res://Entities/Zombie.tscn
 res://Entities/Boss.tscn
+res://Player/Player.tscn
+res://Scenes/world.tscn
 res://Entities/Boss.gd

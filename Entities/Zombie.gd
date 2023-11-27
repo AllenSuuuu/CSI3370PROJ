@@ -13,7 +13,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	#Gravity for Frog
+	#Gravity
 	velocity.y += gravity * delta
 	if chase == true:
 		if get_node("AnimatedSprite2D").animation != "Death":
