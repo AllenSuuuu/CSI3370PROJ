@@ -55,6 +55,9 @@ func _on_area_2d_body_exited(body):
 
 
 func spawnPotion():
+	call_deferred("_spawnPotion")
+
+func _spawnPotion():
 	var potInstance = potionScene.instantiate()
 	potInstance.position = position
 	potInstance.position.y -= 50
