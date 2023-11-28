@@ -1,4 +1,10 @@
 CollisionShape2D
+Sprite2D
+TileMap
+Panel
+StaticBody2D
+ParallaxLayer
+ParallaxBackground
 Area2D
 AnimatedSprite2D
 Button
@@ -7,5 +13,4 @@ VBoxContainer
 Control
 MarginContainer
 Node
-Sprite2D
 CharacterBody2D

@@ -44,9 +44,9 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.y == 0:
-			if (Input.is_action_pressed("Attack")):
-				anim.play("Attack")
-			else:
+			#if (Input.is_action_pressed("Attack")):
+			#	anim.play("Attack")
+			#else:
 				anim.play("Idle")
 	if velocity.y > 0:
 		anim.play("Fall")
