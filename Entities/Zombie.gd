@@ -9,7 +9,7 @@ var controller
 
 func _ready():
 	controller = get_node("../../..")
-	get_node("AnimatedSprite2D").play("Idle")
+	get_node("AnimatedSprite2D").play("Jump")
 
 
 func _physics_process(delta):
