@@ -26,24 +26,26 @@ func _process(delta):
 	pass
 
 
-var armor1Price = 15
-var armor2Price = 30
+const ARMOR1PRICE = 15
+const ARMOR2PRICE = 30
 
 func buyArmor(armor : String):
 	if (armor == "Armor1"):
 		if (!player.hasArmor):
-			player.hasArmor = true
-			player.armor = armor
-			player.jumpAnim = "JumpArmor1"
-			player.runAnim = "RunArmor1"
-			player.idleAnim = "IdleArmor1"
+			if (Game.Gold >= ARMOR1PRICE):
+				player.hasArmor = true
+				player.armor = armor
+				player.jumpAnim = "JumpArmor1"
+				player.runAnim = "RunArmor1"
+				player.idleAnim = "IdleArmor1"
 		
 	if (armor == "Armor2"):
 		if (player.armor != armor):
-			player.hasArmor = true
-			player.armor = armor
-			player.jumpAnim = "JumpArmor2"
-			player.runAnim = "RunArmor2"
-			player.idleAnim = "IdleArmor2"
+			if (Game.Gold >= ARMOR2PRICE):
+				player.hasArmor = true
+				player.armor = armor
+				player.jumpAnim = "JumpArmor2"
+				player.runAnim = "RunArmor2"
+				player.idleAnim = "IdleArmor2"
 	
 	pass
