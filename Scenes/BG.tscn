@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cqipdpcos2mvo" path="res://Sunny Land houses/Sunny Land Trees Props Pack/Props PNG/plant-house.png" id="3_dnjsy"]
 [ext_resource type="Texture2D" uid="uid://bwa22nm3si726" path="res://sunny-land-phaser-project/sunny-land/assets/environment/middle.png" id="3_msjeu"]
 
-
 [node name="BG" type="ParallaxBackground"]
 script = ExtResource("1_5wdnc")
 
