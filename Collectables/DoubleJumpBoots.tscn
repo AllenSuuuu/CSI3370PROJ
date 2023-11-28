@@ -1,10 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://3s5qbjj8pmnp"]
+[gd_scene load_steps=10 format=3 uid="uid://3s5qbjj8pmnp"]
 
 [ext_resource type="Script" path="res://Collectables/DoubleJumpBoots.gd" id="1_dkix4"]
-[ext_resource type="Texture2D" uid="uid://cr6p3q25ragq2" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/block.png" id="2_3euqu"]
+[ext_resource type="Texture2D" uid="uid://cxjhtt278lout" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boots/boots_0001.png" id="2_ymd64"]
+[ext_resource type="Texture2D" uid="uid://bn8lfggry5fkt" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boots/boots_0002.png" id="3_vwo3i"]
+[ext_resource type="Texture2D" uid="uid://dyfdyxpqn0qvt" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boots/boots_0003.png" id="4_ohcyi"]
+[ext_resource type="Texture2D" uid="uid://in5hxpojxjii" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boots/boots_0004.png" id="5_0o2im"]
+[ext_resource type="Texture2D" uid="uid://bhmmfdm34sc10" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boots/boots_0005.png" id="6_mhkcx"]
+[ext_resource type="Texture2D" uid="uid://dg2iv1684pogp" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boots/boots_0006.png" id="7_1t83c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5m34e"]
-size = Vector2(16, 16)
+size = Vector2(22, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njqve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ymd64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vwo3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ohcyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0o2im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mhkcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1t83c")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="DoubleJumpBoots" type="Area2D"]
 script = ExtResource("1_dkix4")
@@ -12,9 +43,9 @@ script = ExtResource("1_dkix4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5m34e")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-
-[node name="Block" type="Sprite2D" parent="."]
-texture = ExtResource("2_3euqu")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_njqve")
+animation = &"Idle"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

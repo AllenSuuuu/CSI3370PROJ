@@ -1,5 +1,5 @@
-Timer
 AnimatedSprite2D
+Timer
 CollisionShape2D
 CharacterBody2D
 Area2D

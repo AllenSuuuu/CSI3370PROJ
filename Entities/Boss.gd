@@ -6,7 +6,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var potionScene = preload("res://Entities/Potion.tscn")
 var player
 var controller
-var chase = false
 var jumpTimer : Timer
 var potTimer : Timer
 
@@ -47,21 +46,6 @@ func _process(delta):
 	move_and_slide()
 	
 	pass
-
-
-func _on_area_2d_body_entered(body):
-	if body.name == "Player":
-		chase = true
-		#spawnPotion()
-	
-	pass # Replace with function body.
-
-
-func _on_area_2d_body_exited(body):
-	if body.name == "Player":
-		chase = false
-	
-	pass # Replace with function body.
 
 
 func spawnPotion():

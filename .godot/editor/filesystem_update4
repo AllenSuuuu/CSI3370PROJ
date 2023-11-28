@@ -1,12 +1,10 @@
-res://Player/Player.tscn
-res://Player/Player.gd
-res://Collectables/Gem.tscn
 res://Collectables/DoubleJumpBoots.tscn
+res://Collectables/Gem.tscn
 res://Entities/Checkpoint.tscn
 res://Entities/Zombie.tscn
 res://Entities/Boss.tscn
 res://Entities/Potion.tscn
+res://Player/Player.tscn
 res://Entities/Trader.tscn
 res://Scenes/world.tscn
-res://Entities/Trader.gd
 res://Entities/Boss.gd
