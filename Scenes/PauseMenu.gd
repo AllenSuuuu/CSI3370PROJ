@@ -22,6 +22,7 @@ func _on_game_controller_toggle_game_paused(isPaused : bool):
 		hide()
 
 
+#Resume button
 func _on_button_pressed():
 	controller.gamePaused = false
 	

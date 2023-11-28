@@ -25,3 +25,4 @@ res://Scenes/world.gd
 res://Entities/Zombie.gd
 res://Collectables/Cherry.tscn
 res://Scenes/BG.tscn
+res://Scenes/TraderMenu.gd
