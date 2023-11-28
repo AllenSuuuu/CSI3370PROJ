@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfkv54ecvnm53"]
+[gd_scene load_steps=5 format=3 uid="uid://bqpq3x72bxn1m"]
 
 [ext_resource type="Texture2D" uid="uid://cr6p3q25ragq2" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/block.png" id="2_3k50c"]
 
@@ -26,10 +26,12 @@ func _process(delta):
 	velocity.y += gravity * delta
 	
 	if (self.is_on_floor()):
-		var displacement = player.position.x - self.position.x
+		var displacementX = player.position.x - self.position.x
+		var displacementY = player.position.y - self.position.y
 		
-		if (displacement <= 75 && displacement >= -75):
-			controller.damagePlayer(2)
+		if (displacementX <= 75 && displacementX >= -75):
+			if (displacementY <= 75 && displacementY >= -75):
+				controller.damagePlayer(2)
 		
 		self.queue_free()
 	
