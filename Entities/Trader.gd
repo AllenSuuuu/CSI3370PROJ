@@ -33,7 +33,6 @@ func _process(delta):
 	if (displacement.x >= -RANGE && displacement.x <= RANGE):
 		if (displacement.y >= -RANGE && displacement.y <= RANGE):
 			if (Input.is_action_pressed("E")):
-				buyArmor("Armor1")
 				openBuyMenu()
 	
 	pass
@@ -69,3 +68,15 @@ func openBuyMenu():
 	get_tree().paused = true
 	menuOpen = true
 	pass
+
+
+func _on_buy_armor_1_button_pressed():
+	buyArmor("Armor1")
+	
+	pass # Replace with function body.
+
+
+func _on_buy_armor_2_button_pressed():
+	buyArmor("Armor1")
+	
+	pass # Replace with function body.

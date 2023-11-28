@@ -643,6 +643,7 @@ layout_mode = 2
 text = "Quit"
 
 [node name="TraderMenu" type="Control" parent="GameController/Game/UI"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -772,5 +773,7 @@ scale = Vector2(4.05, 29.38)
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="GameController/Game/UI/PauseMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ReturnToMenuButton" to="GameController/Game/UI/PauseMenu" method="_on_return_to_menu_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/QuitButton" to="GameController/Game/UI/PauseMenu" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer/BuyArmor1Button" to="GameController/Game/Mobs/Trader" method="_on_buy_armor_1_button_pressed"]
+[connection signal="pressed" from="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer/BuyArmor2Button" to="GameController/Game/Mobs/Trader" method="_on_buy_armor_2_button_pressed"]
 [connection signal="timeout" from="GameController/Game/Collectables/Timer" to="GameController/Game/Collectables" method="_on_timer_timeout"]
 [connection signal="body_entered" from="CloseDungeonTrigger" to="CloseDungeonTrigger" method="_on_body_entered"]

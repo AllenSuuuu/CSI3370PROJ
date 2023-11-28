@@ -10,10 +10,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _Input(event : InputEvent):
-	if (event.is_action_pressed("Escape")):
-		self.hide()
-	
-	pass
