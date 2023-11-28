@@ -1,24 +1,33 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfvr0onqajft1"]
+[gd_scene load_steps=15 format=3 uid="uid://dfvr0onqajft1"]
 
 [ext_resource type="Script" path="res://Entities/Boss.gd" id="1_2kal7"]
-[ext_resource type="Texture2D" uid="uid://bapoewmkgav3g" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/opossum/opossum-2.png" id="2_1gi8j"]
-[ext_resource type="Texture2D" uid="uid://cenq0qcm8ayjd" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/opossum/opossum-1.png" id="2_eyr42"]
+[ext_resource type="Texture2D" uid="uid://bd4f12y6wnij" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/attack/attack_0001.png" id="2_rd3p3"]
 [ext_resource type="Texture2D" uid="uid://jpte4ksp02w6" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-1.png" id="2_v3cbj"]
 [ext_resource type="Texture2D" uid="uid://bwm4mxjo5n3nh" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-2.png" id="3_0w135"]
-[ext_resource type="Texture2D" uid="uid://cbnv14amnj2rc" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/opossum/opossum-3.png" id="3_nqr81"]
+[ext_resource type="Texture2D" uid="uid://cywhso8mq4n56" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/attack/attack_0002.png" id="3_pt67h"]
 [ext_resource type="Texture2D" uid="uid://cnbdf33v4hwiv" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-3.png" id="4_ssikl"]
 [ext_resource type="Texture2D" uid="uid://ci45qj1vqrdvm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-4.png" id="5_meinj"]
 [ext_resource type="Texture2D" uid="uid://d17557trtf4yk" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-5.png" id="6_uia6c"]
 [ext_resource type="Texture2D" uid="uid://c3lyhyx4w1f1t" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-6.png" id="7_iy817"]
-[ext_resource type="Texture2D" uid="uid://cprf5w4ygpsmn" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/opossum/opossum-4.png" id="11_4nn6j"]
-[ext_resource type="Texture2D" uid="uid://ddt8u8to4mmf8" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/opossum/opossum-5.png" id="12_kkv6r"]
-[ext_resource type="Texture2D" uid="uid://btdvduygqvkea" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/opossum/opossum-6.png" id="13_nks1a"]
+[ext_resource type="Texture2D" uid="uid://p6mi2ijrwpit" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/walk/walk_0001.png" id="10_u3yug"]
+[ext_resource type="Texture2D" uid="uid://nk1oyg3r46fy" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/walk/walk_0002.png" id="11_j6kpb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wis5"]
 size = Vector2(34, 22)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5q3vq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rd3p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pt67h")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_v3cbj")
@@ -44,16 +53,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1gi8j")
+"texture": ExtResource("10_u3yug")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_1gi8j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_nqr81")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_nqr81")
+"texture": ExtResource("11_j6kpb")
 }],
 "loop": true,
 "name": &"Idle",
@@ -61,22 +64,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_eyr42")
+"texture": ExtResource("10_u3yug")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_1gi8j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_nqr81")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_4nn6j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_kkv6r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_nks1a")
+"texture": ExtResource("11_j6kpb")
 }],
 "loop": true,
 "name": &"Run",
@@ -95,7 +86,7 @@ shape = SubResource("RectangleShape2D_7wis5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5q3vq")
-animation = &"Idle"
+animation = &"Attack"
 
 [node name="Area2D" type="Area2D" parent="."]
 
