@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+var hp = 10
 var SPEED = 150
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var potionScene = preload("res://Entities/Potion.tscn")
@@ -16,21 +16,27 @@ func _ready():
 	pass # Replace with function body.
 
 
+var direction = Vector2(-1, 0)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#Gravity
 	velocity.y += gravity * delta
-	if chase == true:
-		if get_node("AnimatedSprite2D").animation != "Death":
-			get_node("AnimatedSprite2D").play("Run")
-		player = get_node("../../Player/Player")
-		var direction = (player.position - self.position).normalized()
-		if direction.x > 0:
-			get_node("AnimatedSprite2D").flip_h = true
-		else:
-			get_node("AnimatedSprite2D").flip_h = false
-		#velocity.x = direction.x * SPEED
+	if get_node("AnimatedSprite2D").animation != "Death":
+		get_node("AnimatedSprite2D").play("Run")
+	player = get_node("../../Player/Player")
+	
+	
+	if (is_on_wall()):
+		direction.x *= -1
+	
+	if direction.x > 0:
+		get_node("AnimatedSprite2D").flip_h = true
 	else:
+		get_node("AnimatedSprite2D").flip_h = false
+	velocity.x = direction.x * SPEED
+	
+	if (velocity.x == 0):
 		if get_node("AnimatedSprite2D").animation != "Death":
 			get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0

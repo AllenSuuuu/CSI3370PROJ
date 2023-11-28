@@ -10,22 +10,28 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
 
 var canDoubleJump : bool = true
+var hasArmor : bool = false
+var armor : String = "None"
+
+var jumpAnim = "Jump"
+var runAnim = "Run"
+var idleAnim = "Idle"
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += gravity * delta 
 	# Handle Jump.
 	if (is_on_floor()):
 		canDoubleJump = true
 		if (Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("W") || Input.is_action_just_pressed("Space")):
 			velocity.y = JUMP_VELOCITY
-			anim.play("Jump")
+			anim.play(jumpAnim)
 	else:
 		if (canDoubleJump && Game.hasJumpBoots):
 			if (Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("W") || Input.is_action_just_pressed("Space")):
 				velocity.y = JUMP_VELOCITY
-				anim.play("Jump")
+				anim.play(jumpAnim)
 				canDoubleJump = false
 	
 	# Get the input direction and handle the movement/deceleration.
@@ -40,14 +46,14 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
-			anim.play("Run")
+			anim.play(runAnim)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.y == 0:
 			#if (Input.is_action_pressed("Attack")):
 			#	anim.play("Attack")
 			#else:
-				anim.play("Idle")
+				anim.play(idleAnim)
 	if velocity.y > 0:
 		anim.play("Fall")
 	move_and_slide()
