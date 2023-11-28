@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqpq3x72bxn1m"]
 
-[ext_resource type="Texture2D" uid="uid://cr6p3q25ragq2" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/block.png" id="2_3k50c"]
+[ext_resource type="Texture2D" uid="uid://gnrhlo7qqkxw" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/potion/potion.png" id="1_4317a"]
 
 [sub_resource type="GDScript" id="GDScript_78wl4"]
 script/source = "extends CharacterBody2D
@@ -41,15 +41,13 @@ func _process(delta):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fl2qt"]
-radius = 4.0
+radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kare5"]
+radius = 5.0
 
 [node name="Potion" type="CharacterBody2D"]
 script = SubResource("GDScript_78wl4")
-
-[node name="Block" type="Sprite2D" parent="."]
-texture = ExtResource("2_3k50c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fl2qt")
@@ -58,3 +56,6 @@ shape = SubResource("CircleShape2D_fl2qt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_kare5")
+
+[node name="Potion" type="Sprite2D" parent="."]
+texture = ExtResource("1_4317a")
