@@ -1,21 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://c8vn4jjs2dg0u"]
+[gd_scene load_steps=14 format=3 uid="uid://c8vn4jjs2dg0u"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_m3tp6"]
 [ext_resource type="Texture2D" uid="uid://dkk0ghojesq80" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/player-hurt.png" id="1_wuvcd"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/attack/untitled_0001.png" id="2_4dmvq"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/attack/untitled_0002.png" id="3_6t3lx"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/attack/untitled_0003.png" id="4_uwjdi"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/jump/player-jump-1.png" id="5_8ttsh"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/attack/untitled_0004.png" id="5_ibchp"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/jump/player-jump-2.png" id="6_ji3q0"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-1.png" id="7_8y80i"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/idle_0001.png" id="7_lpfyp"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-2.png" id="8_oj4o2"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/idle/idle_0002.png" id="8_wqyye"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-3.png" id="9_8okor"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-4.png" id="10_mvwid"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-5.png" id="11_iotgn"]
-[ext_resource type="Texture2D" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/player/run/player-run-6.png" id="12_raqbq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eawrj"]
 radius = 6.0
@@ -33,16 +19,16 @@ region = Rect2(33, 0, 33, 32)
 animations = [{
 "frames": [{
 "duration": 0.5,
-"texture": ExtResource("2_4dmvq")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_6t3lx")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_uwjdi")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ibchp")
+"texture": null
 }],
 "loop": true,
 "name": &"Attack",
@@ -61,10 +47,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_lpfyp")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_wqyye")
+"texture": null
 }],
 "loop": true,
 "name": &"Idle",
@@ -72,10 +58,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_8ttsh")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ji3q0")
+"texture": null
 }],
 "loop": true,
 "name": &"Jump",
@@ -83,22 +69,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_8y80i")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_oj4o2")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_8okor")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_mvwid")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_iotgn")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_raqbq")
+"texture": null
 }],
 "loop": true,
 "name": &"Run",
@@ -272,7 +258,8 @@ flip_h = true
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.6, 1.6)
+position = Vector2(0, -70)
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
 
