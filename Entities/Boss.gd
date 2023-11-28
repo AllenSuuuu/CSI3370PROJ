@@ -7,9 +7,13 @@ var potionScene = preload("res://Entities/Potion.tscn")
 var player
 var controller
 var chase = false
+var jumpTimer : Timer
+var potTimer : Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	jumpTimer = $JumpTimer
+	potTimer = $PotionTimer
 	controller = get_node("../../..")
 	player = get_node("../../Player/Player")
 	
@@ -48,7 +52,7 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		chase = true
-		spawnPotion()
+		#spawnPotion()
 	
 	pass # Replace with function body.
 
@@ -70,3 +74,26 @@ func _spawnPotion():
 	get_parent().add_child(potInstance)
 	
 	pass
+
+
+func _on_jump_timer_timeout():
+	jump()
+	
+	jumpTimer.wait_time = randf_range(0.5, 1.5)
+	
+	pass # Replace with function body.
+
+
+func jump():
+	if (is_on_floor()):
+		velocity.y += -350
+	
+	pass
+
+
+func _on_potion_timer_timeout():
+	spawnPotion()
+	
+	potTimer.wait_time = randf_range(0.5, 1.5)
+	
+	pass # Replace with function body.

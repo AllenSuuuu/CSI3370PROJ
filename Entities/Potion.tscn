@@ -41,13 +41,21 @@ func _process(delta):
 	move_and_slide()
 	
 	pass
+
+
+func _on_area_2d_body_entered(body):
+	if body.name == \"Player\":
+		controller.damagePlayer(2)
+		self.queue_free()
+		
+	pass # Replace with function body.
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fl2qt"]
-radius = 5.0
+radius = 4.12311
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kare5"]
-radius = 5.0
+radius = 6.0
 
 [node name="Potion" type="CharacterBody2D"]
 script = SubResource("GDScript_78wl4")
@@ -62,3 +70,5 @@ shape = SubResource("CircleShape2D_kare5")
 
 [node name="Potion" type="Sprite2D" parent="."]
 texture = ExtResource("1_4317a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

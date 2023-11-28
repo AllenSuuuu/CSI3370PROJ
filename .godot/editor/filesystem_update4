@@ -9,3 +9,4 @@ res://Entities/Potion.tscn
 res://Entities/Trader.tscn
 res://Scenes/world.tscn
 res://Entities/Trader.gd
+res://Entities/Boss.gd
