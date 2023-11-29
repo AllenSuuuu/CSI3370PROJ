@@ -1,6 +1,5 @@
-[gd_scene load_steps=23 format=3 uid="uid://bsf322qs0134a"]
+[gd_scene load_steps=18 format=3 uid="uid://bsf322qs0134a"]
 
-[ext_resource type="Texture2D" uid="uid://dqn66wsdxt4hv" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/frog-idle.png" id="1_04jnr"]
 [ext_resource type="Texture2D" uid="uid://cxoq4mfrpsym5" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/enemy-deadth.png" id="1_7y4t8"]
 [ext_resource type="Script" path="res://Entities/Zombie.gd" id="1_h1wq8"]
 [ext_resource type="Texture2D" uid="uid://bw4qle7spso3u" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0001.png" id="4_m16s5"]
@@ -35,22 +34,6 @@ region = Rect2(160, 0, 40, 41)
 atlas = ExtResource("1_7y4t8")
 region = Rect2(200, 0, 40, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_he5m1"]
-atlas = ExtResource("1_04jnr")
-region = Rect2(0, 0, 35, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_txega"]
-atlas = ExtResource("1_04jnr")
-region = Rect2(35, 0, 35, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_25cdn"]
-atlas = ExtResource("1_04jnr")
-region = Rect2(70, 0, 35, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aekwx"]
-atlas = ExtResource("1_04jnr")
-region = Rect2(105, 0, 35, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_tj84u"]
 animations = [{
 "frames": [{
@@ -74,44 +57,6 @@ animations = [{
 }],
 "loop": false,
 "name": &"Death",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_he5m1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_txega")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_25cdn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aekwx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_he5m1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_he5m1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_he5m1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_he5m1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_he5m1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_he5m1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_he5m1")
-}],
-"loop": true,
-"name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
