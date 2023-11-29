@@ -16,6 +16,8 @@ var armor : String = "None"
 var jumpAnim = "Jump"
 var runAnim = "Run"
 var idleAnim = "Idle"
+var attackAnim = "Attack"
+var attackAnim2 = "Attack2"
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -49,11 +51,13 @@ func _physics_process(delta):
 			anim.play(runAnim)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if velocity.y == 0:
-			#if (Input.is_action_pressed("Attack")):
-			#	anim.play("Attack")
-			#else:
-				anim.play(idleAnim)
+		if Input.is_action_just_pressed("Attack"):
+			print("Attacking!")
+			anim.play(attackAnim2)
+		#if velocity.y == 0:
+	
+	#else:
+		#anim.play(idleAnim)
 	if velocity.y > 0:
 		anim.play("Fall")
 	move_and_slide()
@@ -74,6 +78,7 @@ func _physics_process(delta):
 		
 	
 	pass
+
 
 func goToCheckpoint(checkpoint : Area2D):
 	var tween = get_tree().create_tween()
