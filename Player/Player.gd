@@ -40,11 +40,14 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	direction += Input.get_axis("A", "D")
-
+	var swordHit = get_node("AnimatedSprite2D/SwordHit")
+	
 	if direction == -1:
 		get_node("AnimatedSprite2D").flip_h = true
+		swordHit.scale.x = -direction
 	elif direction == 1:
 		get_node("AnimatedSprite2D").flip_h = false
+		swordHit.scale.x = -direction
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
@@ -55,6 +58,9 @@ func _physics_process(delta):
 			anim.play(attackAnim)
 			await $AnimationPlayer.animation_finished
 			anim.play(idleAnim)
+	
+	if (get_node("AnimationPlayer").get_assigned_animation() != "Attack"):
+		get_node("AnimatedSprite2D/SwordHit/CollisionShape2D").set_disabled(true)
 	
 	if velocity.y > 0:
 		anim.play("Fall")
@@ -82,3 +88,15 @@ func goToCheckpoint():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", Game.currentCheckpoint.position, 0)
 	pass
+
+
+func _on_sword_hit_area_entered(area):
+	
+	pass # Replace with function body.
+
+
+func _on_sword_hit_body_entered(body):
+	if (body.name != "Player"):
+		get_node("../../Mobs/" + body.name).takeDamage()
+	
+	pass # Replace with function body.

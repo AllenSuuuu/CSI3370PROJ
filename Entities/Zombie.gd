@@ -4,6 +4,7 @@ var SPEED = 50
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player
 var chase = false
+var hp = 1
 
 var controller
 
@@ -60,3 +61,8 @@ func death():
 	get_node("AnimatedSprite2D").play("Death")
 	await get_node("AnimatedSprite2D").animation_finished
 	self.queue_free()
+
+func takeDamage():
+	death()
+	
+	pass
