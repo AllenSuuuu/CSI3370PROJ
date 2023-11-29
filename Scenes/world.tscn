@@ -561,7 +561,7 @@ position = Vector2(848, 144)
 position = Vector2(1389, 61)
 
 [node name="Boss" parent="GameController/Game/Mobs" instance=ExtResource("18_vbwru")]
-position = Vector2(500, 287.085)
+position = Vector2(2727, 278)
 
 [node name="Trader" parent="GameController/Game/Mobs" instance=ExtResource("19_ecxl5")]
 position = Vector2(80, 286)
@@ -592,6 +592,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" type="Control" parent="GameController/Game/UI" node_paths=PackedStringArray("controller")]
 process_mode = 2
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
