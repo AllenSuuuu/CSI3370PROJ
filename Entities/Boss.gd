@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var hp = 10
+var hp = 5
 var SPEED = 150
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var potionScene = preload("res://Entities/Potion.tscn")
@@ -90,3 +90,22 @@ func _on_potion_timer_timeout():
 	potTimer.wait_time = randf_range(0.5, 1.5)
 	
 	pass # Replace with function body.
+
+
+func death():
+	Game.Gold += 15
+	Utils.saveGame()
+	get_node("AnimatedSprite2D").play("Death")
+	await get_node("AnimatedSprite2D").animation_finished
+	self.queue_free()
+	
+	pass
+
+
+func takeDamage():
+	hp -= 2
+	
+	if (hp <= 0):
+		death()
+	
+	pass

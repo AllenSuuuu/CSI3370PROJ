@@ -4,6 +4,8 @@ var SPEED = 50
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player
 var chase = false
+var hp = 1
+var isAlive = true
 
 var controller
 
@@ -42,21 +44,30 @@ func _on_player_detection_body_exited(body):
 
 
 func _on_player_death_body_entered(body):
-	if body.name == "Player":
-		death()
+	if (isAlive):
+		if body.name == "Player":
+			death()
 
 
 func _on_player_collison_body_entered(body):
-	if body.name == "Player":
-		controller.damagePlayer(3)
-		
-		death()
+	if (isAlive):
+		if body.name == "Player":
+			controller.damagePlayer(3)
+			
+			death()
 
 
 func death():
+	isAlive = false
 	Game.Gold += 5
 	Utils.saveGame()
 	chase = false
 	get_node("AnimatedSprite2D").play("Death")
 	await get_node("AnimatedSprite2D").animation_finished
 	self.queue_free()
+
+func takeDamage():
+	if (isAlive):
+		death()
+	
+	pass

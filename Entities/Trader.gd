@@ -1,12 +1,24 @@
 extends CharacterBody2D
 
+class_name Trader
 
 var player
+var controller
 
+signal toggle_buy_menu(menuOpen : bool)
+
+var menuOpen : bool = false:
+	get:
+		return menuOpen
+	set(value):
+		menuOpen = value
+		get_tree().paused = menuOpen
+		emit_signal("toggle_buy_menu", menuOpen)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_node("../../Player/Player")
+	controller = get_node("../../..")
 	
 	pass # Replace with function body.
 
@@ -21,7 +33,7 @@ func _process(delta):
 	if (displacement.x >= -RANGE && displacement.x <= RANGE):
 		if (displacement.y >= -RANGE && displacement.y <= RANGE):
 			if (Input.is_action_pressed("E")):
-				buyArmor("Armor1")
+				openBuyMenu()
 	
 	pass
 
@@ -33,6 +45,9 @@ func buyArmor(armor : String):
 	if (armor == "Armor1"):
 		if (!player.hasArmor):
 			if (Game.Gold >= ARMOR1PRICE):
+				print("Gold reduced")
+				Game.Gold -= ARMOR1PRICE
+				Game.playerHP += 5
 				player.hasArmor = true
 				player.armor = armor
 				player.jumpAnim = "JumpArmor1"
@@ -42,6 +57,8 @@ func buyArmor(armor : String):
 	if (armor == "Armor2"):
 		if (player.armor != armor):
 			if (Game.Gold >= ARMOR2PRICE):
+				Game.Gold -= ARMOR2PRICE
+				Game.playerHP += 10
 				player.hasArmor = true
 				player.armor = armor
 				player.jumpAnim = "JumpArmor2"
@@ -49,3 +66,22 @@ func buyArmor(armor : String):
 				player.idleAnim = "IdleArmor2"
 	
 	pass
+
+
+func openBuyMenu():
+	get_node("../../UI/TraderMenu").show()
+	get_tree().paused = true
+	menuOpen = true
+	pass
+
+
+func _on_buy_armor_1_button_pressed():
+	buyArmor("Armor1")
+	
+	pass # Replace with function body.
+
+
+func _on_buy_armor_2_button_pressed():
+	buyArmor("Armor1")
+	
+	pass # Replace with function body.

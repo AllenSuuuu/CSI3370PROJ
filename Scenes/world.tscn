@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=29 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_bnns0"]
 [ext_resource type="Texture2D" uid="uid://riq0bcd0ldar" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_ccixb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://sknwnos3l5cq" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/shrooms.png" id="8_na3kf"]
 [ext_resource type="Texture2D" uid="uid://b0pbe04urp4vm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/crate.png" id="9_fsmij"]
 [ext_resource type="PackedScene" uid="uid://vkkjlktu4wfp" path="res://Environment/Spike.tscn" id="10_4pyus"]
+[ext_resource type="Script" path="res://Scenes/TraderMenu.gd" id="11_rx7n4"]
 [ext_resource type="PackedScene" uid="uid://4koc6lt3jsh1" path="res://Collectables/Gem.tscn" id="11_usxo2"]
 [ext_resource type="Script" path="res://Scenes/CloseDungeonTrigger.gd" id="15_tu3ih"]
 [ext_resource type="PackedScene" uid="uid://3s5qbjj8pmnp" path="res://Collectables/DoubleJumpBoots.tscn" id="16_tku4r"]
@@ -547,9 +548,10 @@ size = Vector2(109, 303)
 [node name="World" type="Node2D"]
 script = ExtResource("1_bnns0")
 
-[node name="GameController" type="Node" parent="."]
+[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("trader")]
 process_mode = 3
 script = ExtResource("2_6cihw")
+trader = NodePath("Game/Mobs/Trader")
 
 [node name="Game" type="Node" parent="GameController"]
 process_mode = 1
@@ -617,6 +619,7 @@ position = Vector2(4578, 638)
 [node name="UI" type="CanvasLayer" parent="GameController/Game"]
 
 [node name="Hp" type="Label" parent="GameController/Game/UI"]
+process_mode = 3
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 48.0
@@ -628,6 +631,7 @@ script = SubResource("GDScript_gm8vn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Gold" type="Label" parent="GameController/Game/UI"]
+process_mode = 3
 offset_left = 8.0
 offset_top = 40.0
 offset_right = 48.0
@@ -640,7 +644,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" type="Control" parent="GameController/Game/UI" node_paths=PackedStringArray("controller")]
 process_mode = 2
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -688,6 +691,46 @@ text = "Return To Menu"
 [node name="QuitButton" type="Button" parent="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="TraderMenu" type="Control" parent="GameController/Game/UI"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_rx7n4")
+
+[node name="MarginContainer" type="MarginContainer" parent="GameController/Game/UI/TraderMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -168.0
+offset_right = 187.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameController/Game/UI/TraderMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Welcome to the farmer's shop!
+Purchase any item by clicking the buttons below"
+
+[node name="BuyArmor1Button" type="Button" parent="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Armor1"
+
+[node name="BuyArmor2Button" type="Button" parent="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Armor2"
 
 [node name="Collectables" type="Node2D" parent="GameController/Game"]
 script = SubResource("GDScript_woffd")
@@ -792,5 +835,7 @@ texture = ExtResource("6_sy7jx")
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="GameController/Game/UI/PauseMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ReturnToMenuButton" to="GameController/Game/UI/PauseMenu" method="_on_return_to_menu_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/QuitButton" to="GameController/Game/UI/PauseMenu" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer/BuyArmor1Button" to="GameController/Game/Mobs/Trader" method="_on_buy_armor_1_button_pressed"]
+[connection signal="pressed" from="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer/BuyArmor2Button" to="GameController/Game/Mobs/Trader" method="_on_buy_armor_2_button_pressed"]
 [connection signal="timeout" from="GameController/Game/Collectables/Timer" to="GameController/Game/Collectables" method="_on_timer_timeout"]
 [connection signal="body_entered" from="CloseDungeonTrigger" to="CloseDungeonTrigger" method="_on_body_entered"]
