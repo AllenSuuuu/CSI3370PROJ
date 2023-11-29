@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=31 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_bnns0"]
 [ext_resource type="Texture2D" uid="uid://riq0bcd0ldar" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_ccixb"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://Scenes/CloseDungeonTrigger.gd" id="15_tu3ih"]
 [ext_resource type="PackedScene" uid="uid://3s5qbjj8pmnp" path="res://Collectables/DoubleJumpBoots.tscn" id="16_tku4r"]
 [ext_resource type="PackedScene" uid="uid://bjjb5edqxakaj" path="res://Entities/Checkpoint.tscn" id="17_iv304"]
+[ext_resource type="Script" path="res://Scenes/SecretArea.gd" id="18_2lf0r"]
 [ext_resource type="PackedScene" uid="uid://dfvr0onqajft1" path="res://Entities/Boss.tscn" id="18_vbwru"]
 [ext_resource type="PackedScene" uid="uid://cksminvgo7vug" path="res://Entities/Trader.tscn" id="19_ecxl5"]
 [ext_resource type="Texture2D" uid="uid://dxqvdqgdi117q" path="res://Sunnyland Trees/Sunnyland Trees/Sprites/Sliced Trees/pine.png" id="20_vbwdr"]
@@ -542,6 +543,9 @@ func _on_timer_timeout():
 		timer.queue_free()
 "
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41vf8"]
+size = Vector2(27, 31)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cqnq"]
 size = Vector2(109, 303)
 
@@ -743,6 +747,13 @@ autostart = true
 
 [node name="Environment" type="Node" parent="GameController/Game"]
 
+[node name="SecretArea" type="Area2D" parent="GameController/Game/Environment"]
+script = ExtResource("18_2lf0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameController/Game/Environment/SecretArea"]
+position = Vector2(2594.5, 641.5)
+shape = SubResource("RectangleShape2D_41vf8")
+
 [node name="Rock-1" type="Sprite2D" parent="GameController/Game/Environment"]
 modulate = Color(1, 1, 1, 0.721569)
 position = Vector2(2096, 636)
@@ -806,6 +817,18 @@ position = Vector2(2216, 673)
 position = Vector2(2188, 475)
 scale = Vector2(1.25, 1.25)
 
+[node name="Pine" type="Sprite2D" parent="GameController/Game/Environment"]
+position = Vector2(3600, 239)
+texture = ExtResource("20_vbwdr")
+
+[node name="Straw-house" type="Sprite2D" parent="GameController/Game/Environment"]
+position = Vector2(3757, 257)
+texture = ExtResource("21_rl4f8")
+
+[node name="Rock-4" type="Sprite2D" parent="GameController/Game/Environment"]
+position = Vector2(3847, 286)
+texture = ExtResource("6_sy7jx")
+
 [node name="CloseDungeonTrigger" type="Area2D" parent="."]
 position = Vector2(2206, 153)
 script = ExtResource("15_tu3ih")
@@ -814,23 +837,12 @@ script = ExtResource("15_tu3ih")
 shape = SubResource("RectangleShape2D_8cqnq")
 
 [node name="DoubleJumpBoots" parent="." instance=ExtResource("16_tku4r")]
-position = Vector2(170, 297)
+z_index = 1
+position = Vector2(2635, 639)
 
 [node name="Checkpoint" parent="." instance=ExtResource("17_iv304")]
 position = Vector2(2646, 294)
 scale = Vector2(4.05, 29.38)
-
-[node name="Pine" type="Sprite2D" parent="."]
-position = Vector2(3600, 239)
-texture = ExtResource("20_vbwdr")
-
-[node name="Straw-house" type="Sprite2D" parent="."]
-position = Vector2(3757, 257)
-texture = ExtResource("21_rl4f8")
-
-[node name="Rock-1" type="Sprite2D" parent="."]
-position = Vector2(3847, 286)
-texture = ExtResource("6_sy7jx")
 
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="GameController/Game/UI/PauseMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ReturnToMenuButton" to="GameController/Game/UI/PauseMenu" method="_on_return_to_menu_button_pressed"]
@@ -838,4 +850,6 @@ texture = ExtResource("6_sy7jx")
 [connection signal="pressed" from="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer/BuyArmor1Button" to="GameController/Game/Mobs/Trader" method="_on_buy_armor_1_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer/BuyArmor2Button" to="GameController/Game/Mobs/Trader" method="_on_buy_armor_2_button_pressed"]
 [connection signal="timeout" from="GameController/Game/Collectables/Timer" to="GameController/Game/Collectables" method="_on_timer_timeout"]
+[connection signal="body_entered" from="GameController/Game/Environment/SecretArea" to="GameController/Game/Environment/SecretArea" method="_on_body_entered"]
+[connection signal="body_exited" from="GameController/Game/Environment/SecretArea" to="GameController/Game/Environment/SecretArea" method="_on_body_exited"]
 [connection signal="body_entered" from="CloseDungeonTrigger" to="CloseDungeonTrigger" method="_on_body_entered"]
