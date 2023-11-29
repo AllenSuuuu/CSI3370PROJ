@@ -154,7 +154,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkepm"]
-size = Vector2(50.5, 31)
+size = Vector2(31, 28)
 
 [sub_resource type="Animation" id="Animation_k5gqr"]
 resource_name = "Attack"
@@ -403,11 +403,12 @@ sprite_frames = SubResource("SpriteFrames_3ltfp")
 animation = &"Attack"
 frame = 1
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/SwordHit"]
-position = Vector2(-35.75, 0.5)
+position = Vector2(-22.5, 2)
 shape = SubResource("RectangleShape2D_gkepm")
 disabled = true
 

@@ -5,6 +5,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player
 var chase = false
 var hp = 1
+var isAlive = true
 
 var controller
 
@@ -48,13 +49,15 @@ func _on_player_death_body_entered(body):
 
 
 func _on_player_collison_body_entered(body):
-	if body.name == "Player":
-		controller.damagePlayer(3)
-		
-		death()
+	if (isAlive):
+		if body.name == "Player":
+			controller.damagePlayer(3)
+			
+			death()
 
 
 func death():
+	isAlive = false
 	Game.Gold += 5
 	Utils.saveGame()
 	chase = false

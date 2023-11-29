@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = get_node("AnimationPlayer")
 
+var isAttacking : bool = false
 var canDoubleJump : bool = true
 var hasArmor : bool = false
 var armor : String = "None"
@@ -42,6 +43,9 @@ func _physics_process(delta):
 	direction += Input.get_axis("A", "D")
 	var swordHit = get_node("AnimatedSprite2D/SwordHit")
 	
+	if (get_node("AnimationPlayer").get_assigned_animation() != "Attack"):
+		isAttacking = false
+	
 	if direction == -1:
 		get_node("AnimatedSprite2D").flip_h = true
 		swordHit.scale.x = -direction
@@ -51,12 +55,17 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
-			anim.play(runAnim)
+			if (Input.is_action_pressed("Attack")):
+				attack()
+			
+			if (!isAttacking):
+				anim.play(runAnim)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if Input.is_action_pressed("Attack"):
-			anim.play(attackAnim)
-			await $AnimationPlayer.animation_finished
+		if (Input.is_action_pressed("Attack")):
+			attack()
+		
+		if (!isAttacking):
 			anim.play(idleAnim)
 	
 	if (get_node("AnimationPlayer").get_assigned_animation() != "Attack"):
@@ -84,6 +93,15 @@ func _physics_process(delta):
 	pass
 
 
+func attack():
+	isAttacking = true
+	anim.play(attackAnim)
+	await $AnimationPlayer.animation_finished
+	isAttacking = false
+	
+	pass
+
+
 func goToCheckpoint():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", Game.currentCheckpoint.position, 0)
@@ -96,7 +114,9 @@ func _on_sword_hit_area_entered(area):
 
 
 func _on_sword_hit_body_entered(body):
-	if (body.name != "Player"):
+	var zombie = "Frog"
+	var boss = "Boss"
+	if (boss in body.name || zombie in body.name):
 		get_node("../../Mobs/" + body.name).takeDamage()
 	
 	pass # Replace with function body.
