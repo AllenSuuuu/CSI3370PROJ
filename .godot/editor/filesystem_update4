@@ -5,10 +5,14 @@ res://Entities/Boss.tscn
 res://Entities/Potion.tscn
 res://Player/Player.tscn
 res://Entities/Trader.tscn
-res://Scenes/world.tscn
-res://Collectables/Cherry.tscn
 res://Scenes/BG.tscn
+<<<<<<< Updated upstream
+res://Scenes/main.tscn
+=======
 res://Player/Player.gd
 res://Entities/Trader.gd
 res://Scenes/GameController.gd
 res://Entities/Zombie.gd
+res://Scenes/HiddenArea.gd
+res://Entities/Boss.gd
+>>>>>>> Stashed changes
