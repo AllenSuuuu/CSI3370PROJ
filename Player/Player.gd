@@ -72,7 +72,11 @@ func _physics_process(delta):
 		get_node("AnimatedSprite2D/SwordHit/CollisionShape2D").set_disabled(true)
 	
 	if velocity.y > 0:
-		anim.play("Fall")
+		if (Input.is_action_pressed("Attack")):
+			attack()
+		
+		if (!isAttacking):
+			anim.play("Fall")
 	move_and_slide()
 	
 	
