@@ -55,10 +55,7 @@ func _physics_process(delta):
 			anim.play(attackAnim)
 			await $AnimationPlayer.animation_finished
 			anim.play(idleAnim)
-		#if velocity.y == 0:
 	
-	#else:
-		#anim.play(idleAnim)
 	if velocity.y > 0:
 		anim.play("Fall")
 	move_and_slide()
