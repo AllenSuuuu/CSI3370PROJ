@@ -8,6 +8,7 @@ var player
 var controller
 var jumpTimer : Timer
 var potTimer : Timer
+const range : int = 350
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -76,7 +77,15 @@ func jump():
 
 
 func _on_potion_timer_timeout():
-	spawnPotion()
+	var playerPos = player.position
+	var pos = self.position
+	
+	var displacementX = playerPos.x - pos.x
+	var displacementY = playerPos.y - pos.y
+	
+	if (displacementX >= -range && displacementX <= range):
+		if (displacementY >= -range && displacementY <= range):
+			spawnPotion()
 	
 	potTimer.wait_time = randf_range(0.5, 1.5)
 	

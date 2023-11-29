@@ -1,11 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://bsf322qs0134a"]
+[gd_scene load_steps=23 format=3 uid="uid://bsf322qs0134a"]
 
 [ext_resource type="Texture2D" uid="uid://cxoq4mfrpsym5" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/spritesheets/enemy-deadth.png" id="1_7y4t8"]
 [ext_resource type="Script" path="res://Entities/Zombie.gd" id="1_h1wq8"]
+[ext_resource type="Texture2D" uid="uid://dtcb82pfve0qx" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/idle/idle_0001.png" id="3_k3p80"]
 [ext_resource type="Texture2D" uid="uid://bw4qle7spso3u" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0001.png" id="4_m16s5"]
+[ext_resource type="Texture2D" uid="uid://bcjpe2ev32bm1" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/idle/idle_0002.png" id="4_uw1mp"]
+[ext_resource type="Texture2D" uid="uid://qbtwdpauche" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/idle/idle_0003.png" id="5_ohftr"]
 [ext_resource type="Texture2D" uid="uid://bgy5ukvdmecc8" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0002.png" id="5_rwmkl"]
 [ext_resource type="Texture2D" uid="uid://cybuw16qx007k" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0003.png" id="6_1nxnw"]
+[ext_resource type="Texture2D" uid="uid://dsegya217l7fq" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/idle/idle_0004.png" id="6_6xbao"]
 [ext_resource type="Texture2D" uid="uid://bclp70gben0wb" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/walk/untitled_0004.png" id="7_6qmbl"]
+[ext_resource type="Texture2D" uid="uid://d1mfhk0xm7kpn" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/zombie/idle/idle_0005.png" id="7_r4ohl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5r6w0"]
 size = Vector2(18.094, 19.4087)
@@ -61,6 +66,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_k3p80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uw1mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ohftr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6xbao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r4ohl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_m16s5")
 }, {
 "duration": 1.0,
@@ -98,7 +123,7 @@ shape = SubResource("RectangleShape2D_5r6w0")
 position = Vector2(0, -11)
 scale = Vector2(-0.988559, 1.03367)
 sprite_frames = SubResource("SpriteFrames_tj84u")
-animation = &"Jump"
+animation = &"Idle"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 visible = false

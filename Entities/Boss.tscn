@@ -1,16 +1,16 @@
 [gd_scene load_steps=14 format=3 uid="uid://dfvr0onqajft1"]
 
 [ext_resource type="Script" path="res://Entities/Boss.gd" id="1_2kal7"]
-[ext_resource type="Texture2D" uid="uid://bd4f12y6wnij" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/attack/attack_0001.png" id="2_rd3p3"]
+[ext_resource type="Texture2D" uid="uid://bgsxn5gft7545" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/attack/attack_0001.png" id="2_rd3p3"]
 [ext_resource type="Texture2D" uid="uid://jpte4ksp02w6" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-1.png" id="2_v3cbj"]
 [ext_resource type="Texture2D" uid="uid://bwm4mxjo5n3nh" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-2.png" id="3_0w135"]
-[ext_resource type="Texture2D" uid="uid://cywhso8mq4n56" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/attack/attack_0002.png" id="3_pt67h"]
+[ext_resource type="Texture2D" uid="uid://cs3fwfw8lg4lm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/attack/attack_0002.png" id="3_pt67h"]
 [ext_resource type="Texture2D" uid="uid://cnbdf33v4hwiv" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-3.png" id="4_ssikl"]
 [ext_resource type="Texture2D" uid="uid://ci45qj1vqrdvm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-4.png" id="5_meinj"]
 [ext_resource type="Texture2D" uid="uid://d17557trtf4yk" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-5.png" id="6_uia6c"]
 [ext_resource type="Texture2D" uid="uid://c3lyhyx4w1f1t" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-6.png" id="7_iy817"]
-[ext_resource type="Texture2D" uid="uid://p6mi2ijrwpit" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/walk/walk_0001.png" id="10_u3yug"]
-[ext_resource type="Texture2D" uid="uid://nk1oyg3r46fy" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/walk/walk_0002.png" id="11_j6kpb"]
+[ext_resource type="Texture2D" uid="uid://bl6i6ukhxkjwa" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/walk/walk_0001.png" id="10_u3yug"]
+[ext_resource type="Texture2D" uid="uid://bqhrxv7hqtano" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/boss/walk/walk_0002.png" id="11_j6kpb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wis5"]
 size = Vector2(34, 22)

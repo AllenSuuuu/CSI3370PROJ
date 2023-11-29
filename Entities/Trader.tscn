@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cksminvgo7vug"]
 
 [ext_resource type="Script" path="res://Entities/Trader.gd" id="1_tsu12"]
-[ext_resource type="Texture2D" uid="uid://1h4f2sbrbuoq" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/NPC/idle/idle_0001.png" id="2_ha1hs"]
-[ext_resource type="Texture2D" uid="uid://cvhixh80g6y8y" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/NPC/idle/idle_0002.png" id="3_ww6i7"]
+[ext_resource type="Texture2D" uid="uid://bly37m7jj001f" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/NPC/idle/idle_0001.png" id="2_ha1hs"]
+[ext_resource type="Texture2D" uid="uid://pgtn8n416170" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/NPC/idle/idle_0002.png" id="3_ww6i7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ckwqf"]
 
