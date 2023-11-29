@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=29 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_bnns0"]
 [ext_resource type="Texture2D" uid="uid://riq0bcd0ldar" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_ccixb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://sknwnos3l5cq" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/shrooms.png" id="8_na3kf"]
 [ext_resource type="Texture2D" uid="uid://b0pbe04urp4vm" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/crate.png" id="9_fsmij"]
 [ext_resource type="PackedScene" uid="uid://vkkjlktu4wfp" path="res://Environment/Spike.tscn" id="10_4pyus"]
+[ext_resource type="Script" path="res://Scenes/TraderMenu.gd" id="11_rx7n4"]
 [ext_resource type="PackedScene" uid="uid://4koc6lt3jsh1" path="res://Collectables/Gem.tscn" id="11_usxo2"]
 [ext_resource type="Script" path="res://Scenes/CloseDungeonTrigger.gd" id="15_tu3ih"]
 [ext_resource type="PackedScene" uid="uid://3s5qbjj8pmnp" path="res://Collectables/DoubleJumpBoots.tscn" id="16_tku4r"]
@@ -676,6 +677,13 @@ text = "Return To Menu"
 [node name="QuitButton" type="Button" parent="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="TraderMenu" type="Control" parent="GameController/Game/UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_rx7n4")
 
 [node name="Collectables" type="Node2D" parent="GameController/Game"]
 script = SubResource("GDScript_woffd")
