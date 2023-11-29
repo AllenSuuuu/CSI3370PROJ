@@ -607,6 +607,7 @@ position = Vector2(4063, 286)
 [node name="UI" type="CanvasLayer" parent="GameController/Game"]
 
 [node name="Hp" type="Label" parent="GameController/Game/UI"]
+process_mode = 3
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 48.0
@@ -618,6 +619,7 @@ script = SubResource("GDScript_gm8vn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Gold" type="Label" parent="GameController/Game/UI"]
+process_mode = 3
 offset_left = 8.0
 offset_top = 40.0
 offset_right = 48.0

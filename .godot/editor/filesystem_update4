@@ -11,3 +11,4 @@ res://Scenes/BG.tscn
 res://Player/Player.gd
 res://Entities/Trader.gd
 res://Scenes/GameController.gd
+res://Entities/Zombie.gd

@@ -45,6 +45,9 @@ func buyArmor(armor : String):
 	if (armor == "Armor1"):
 		if (!player.hasArmor):
 			if (Game.Gold >= ARMOR1PRICE):
+				print("Gold reduced")
+				Game.Gold -= ARMOR1PRICE
+				Game.playerHP += 5
 				player.hasArmor = true
 				player.armor = armor
 				player.jumpAnim = "JumpArmor1"
@@ -54,6 +57,8 @@ func buyArmor(armor : String):
 	if (armor == "Armor2"):
 		if (player.armor != armor):
 			if (Game.Gold >= ARMOR2PRICE):
+				Game.Gold -= ARMOR2PRICE
+				Game.playerHP += 10
 				player.hasArmor = true
 				player.armor = armor
 				player.jumpAnim = "JumpArmor2"
