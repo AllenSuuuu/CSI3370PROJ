@@ -9,3 +9,4 @@ res://Scenes/world.tscn
 res://Collectables/Cherry.tscn
 res://Scenes/BG.tscn
 res://Player/Player.gd
+res://Entities/Trader.gd
