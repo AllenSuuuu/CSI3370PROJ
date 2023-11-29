@@ -73,7 +73,7 @@ func _on_jump_timer_timeout():
 func jump():
 	if (isAlive):
 		if (is_on_floor()):
-			velocity.y += -350
+			velocity.y += -450
 	
 	pass
 
