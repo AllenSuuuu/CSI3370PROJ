@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqpq3x72bxn1m"]
 
-[ext_resource type="Texture2D" uid="uid://gnrhlo7qqkxw" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/potion/potion.png" id="1_4317a"]
+[ext_resource type="Texture2D" uid="uid://daxrpb88k5ku8" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/sprites/potion/potion.png" id="1_4317a"]
 
 [sub_resource type="GDScript" id="GDScript_78wl4"]
 script/source = "extends CharacterBody2D
