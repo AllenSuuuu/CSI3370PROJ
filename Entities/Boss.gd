@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var hp = 5
+var isAlive : bool = true
 var SPEED = 150
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var potionScene = preload("res://Entities/Potion.tscn")
@@ -70,24 +71,26 @@ func _on_jump_timer_timeout():
 
 
 func jump():
-	if (is_on_floor()):
-		velocity.y += -350
+	if (isAlive):
+		if (is_on_floor()):
+			velocity.y += -350
 	
 	pass
 
 
 func _on_potion_timer_timeout():
-	var playerPos = player.position
-	var pos = self.position
-	
-	var displacementX = playerPos.x - pos.x
-	var displacementY = playerPos.y - pos.y
-	
-	if (displacementX >= -range && displacementX <= range):
-		if (displacementY >= -range && displacementY <= range):
-			spawnPotion()
-	
-	potTimer.wait_time = randf_range(0.5, 1.5)
+	if (isAlive):
+		var playerPos = player.position
+		var pos = self.position
+		
+		var displacementX = playerPos.x - pos.x
+		var displacementY = playerPos.y - pos.y
+		
+		if (displacementX >= -range && displacementX <= range):
+			if (displacementY >= -range && displacementY <= range):
+				spawnPotion()
+		
+		potTimer.wait_time = randf_range(0.5, 1.5)
 	
 	pass # Replace with function body.
 
