@@ -1,4 +1,5 @@
 res://Collectables/Gem.tscn
+res://Player/Player.gd
 res://Entities/Checkpoint.tscn
 res://Entities/Zombie.tscn
 res://Entities/Boss.tscn
@@ -8,7 +9,3 @@ res://Entities/Trader.tscn
 res://Scenes/world.tscn
 res://Collectables/Cherry.tscn
 res://Scenes/BG.tscn
-res://Player/Player.gd
-res://Entities/Trader.gd
-res://Scenes/GameController.gd
-res://Entities/Zombie.gd
