@@ -1,3 +1,8 @@
+res://Scenes/main.gd
+res://Scenes/main.tscn
+res://Player/Player.gd
+res://Scenes/SettingsMenu.gd
+res://Scenes/SettingsMenu.tscn
 res://Collectables/Gem.tscn
 res://Entities/Checkpoint.tscn
 res://Entities/Zombie.tscn
@@ -8,10 +13,3 @@ res://Entities/Trader.tscn
 res://Scenes/world.tscn
 res://Collectables/Cherry.tscn
 res://Scenes/BG.tscn
-res://Player/Player.gd
-res://Entities/Trader.gd
-res://Scenes/GameController.gd
-res://Entities/Zombie.gd
-res://Scenes/HiddenArea.gd
-res://Entities/Boss.gd
-res://Scenes/SecretArea.gd
