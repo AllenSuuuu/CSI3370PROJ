@@ -8,19 +8,28 @@ script = ExtResource("1_q2k67")
 
 [node name="Play" type="Button" parent="."]
 offset_left = 428.0
-offset_top = 110.0
+offset_top = 80.0
 offset_right = 714.0
-offset_bottom = 261.0
+offset_bottom = 231.0
 text = "Play"
 
+[node name="Settings" type="Button" parent="."]
+offset_left = 428.0
+offset_top = 250.0
+offset_right = 714.0
+offset_bottom = 401.0
+text = "Settings
+"
+
 [node name="Quit" type="Button" parent="."]
-offset_left = 432.0
-offset_top = 358.0
-offset_right = 718.0
-offset_bottom = 509.0
+offset_left = 428.0
+offset_top = 420.0
+offset_right = 714.0
+offset_bottom = 571.0
 text = "Quit"
 
 [node name="BG" parent="." instance=ExtResource("2_lh1wr")]
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
