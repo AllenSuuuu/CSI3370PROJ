@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=34 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_bnns0"]
 [ext_resource type="Texture2D" uid="uid://riq0bcd0ldar" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_ccixb"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://b44y0mmjo4ypj" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/skulls.png" id="25_dp2se"]
 [ext_resource type="Texture2D" uid="uid://bqfxerhma1mg1" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/spike-skull.png" id="26_govp8"]
 [ext_resource type="Texture2D" uid="uid://becauaad18wuk" path="res://Sunnyland Trees/Sunnyland Trees/Sprites/Sliced Trees/tree.png" id="26_x6oyn"]
-[ext_resource type="PackedScene" uid="uid://key66gxt5vle" path="res://Collectables/Cherry.tscn" id="27_wxg6j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqah2"]
 texture = ExtResource("1_ccixb")
@@ -692,10 +691,6 @@ layout_mode = 2
 text = "Resume
 "
 
-[node name="SettingsButton" type="Button" parent="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Settings"
-
 [node name="ReturnToMenuButton" type="Button" parent="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Return To Menu"
@@ -877,9 +872,6 @@ position = Vector2(2635, 639)
 [node name="Checkpoint" parent="." instance=ExtResource("17_iv304")]
 position = Vector2(2646, 294)
 scale = Vector2(4.05, 29.38)
-
-[node name="Cherry" parent="." instance=ExtResource("27_wxg6j")]
-position = Vector2(2313, 108)
 
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="GameController/Game/UI/PauseMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ReturnToMenuButton" to="GameController/Game/UI/PauseMenu" method="_on_return_to_menu_button_pressed"]

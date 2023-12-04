@@ -43,10 +43,10 @@ func _on_player_detection_body_exited(body):
 		chase = false
 
 
-#func _on_player_death_body_entered(body):
-	#if (isAlive):
-		#if body.name == "Player":
-			#death()
+func _on_player_death_body_entered(body):
+	if (isAlive):
+		if body.name == "Player":
+			death()
 
 
 func _on_player_collison_body_entered(body):
@@ -54,7 +54,7 @@ func _on_player_collison_body_entered(body):
 		if body.name == "Player":
 			controller.damagePlayer(3)
 			
-			#death()
+			death()
 
 
 func death():

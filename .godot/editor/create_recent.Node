@@ -1,10 +1,10 @@
+Label
+Button
 CheckBox
 VBoxContainer
 MarginContainer
-Button
 CollisionShape2D
 Area2D
-Label
 Control
 AnimatedSprite2D
 Timer
