@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=35 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_bnns0"]
 [ext_resource type="Texture2D" uid="uid://riq0bcd0ldar" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_ccixb"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b44y0mmjo4ypj" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/skulls.png" id="25_dp2se"]
 [ext_resource type="Texture2D" uid="uid://bqfxerhma1mg1" path="res://Sunny-land-files/Sunny-land-assets-files/PNG/environment/props/spike-skull.png" id="26_govp8"]
 [ext_resource type="Texture2D" uid="uid://becauaad18wuk" path="res://Sunnyland Trees/Sunnyland Trees/Sprites/Sliced Trees/tree.png" id="26_x6oyn"]
+[ext_resource type="PackedScene" uid="uid://key66gxt5vle" path="res://Collectables/Cherry.tscn" id="27_wxg6j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqah2"]
 texture = ExtResource("1_ccixb")
@@ -837,6 +838,31 @@ texture = ExtResource("21_rl4f8")
 position = Vector2(3847, 286)
 texture = ExtResource("6_sy7jx")
 
+[node name="Skulls" type="Sprite2D" parent="GameController/Game/Environment"]
+position = Vector2(300, 298)
+texture = ExtResource("25_dp2se")
+
+[node name="Spike-skull" type="Sprite2D" parent="GameController/Game/Environment"]
+position = Vector2(252, 298)
+texture = ExtResource("26_govp8")
+
+[node name="Rock-5" type="Sprite2D" parent="GameController/Game/Environment"]
+position = Vector2(750, 263)
+texture = ExtResource("6_sy7jx")
+
+[node name="Rock-6" type="Sprite2D" parent="GameController/Game/Environment"]
+position = Vector2(345.75, 276.25)
+scale = Vector2(1.17925, 1.17925)
+texture = ExtResource("6_sy7jx")
+
+[node name="Tree" type="Sprite2D" parent="GameController/Game/Environment"]
+position = Vector2(106, 243)
+texture = ExtResource("26_x6oyn")
+
+[node name="Tree2" type="Sprite2D" parent="GameController/Game/Environment"]
+position = Vector2(1148, 199)
+texture = ExtResource("26_x6oyn")
+
 [node name="CloseDungeonTrigger" type="Area2D" parent="."]
 position = Vector2(2206, 153)
 script = ExtResource("15_tu3ih")
@@ -852,30 +878,8 @@ position = Vector2(2635, 639)
 position = Vector2(2646, 294)
 scale = Vector2(4.05, 29.38)
 
-[node name="Skulls" type="Sprite2D" parent="."]
-position = Vector2(300, 298)
-texture = ExtResource("25_dp2se")
-
-[node name="Spike-skull" type="Sprite2D" parent="."]
-position = Vector2(252, 298)
-texture = ExtResource("26_govp8")
-
-[node name="Rock-1" type="Sprite2D" parent="."]
-position = Vector2(750, 263)
-texture = ExtResource("6_sy7jx")
-
-[node name="Rock-2" type="Sprite2D" parent="."]
-position = Vector2(345.75, 276.25)
-scale = Vector2(1.17925, 1.17925)
-texture = ExtResource("6_sy7jx")
-
-[node name="Tree" type="Sprite2D" parent="."]
-position = Vector2(106, 243)
-texture = ExtResource("26_x6oyn")
-
-[node name="Tree2" type="Sprite2D" parent="."]
-position = Vector2(1148, 199)
-texture = ExtResource("26_x6oyn")
+[node name="Cherry" parent="." instance=ExtResource("27_wxg6j")]
+position = Vector2(2313, 108)
 
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="GameController/Game/UI/PauseMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/ReturnToMenuButton" to="GameController/Game/UI/PauseMenu" method="_on_return_to_menu_button_pressed"]
