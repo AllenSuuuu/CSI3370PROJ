@@ -100,6 +100,8 @@ func death():
 	Utils.saveGame()
 	get_node("AnimatedSprite2D").play("Death")
 	await get_node("AnimatedSprite2D").animation_finished
+	get_node("../../UI/WinScreen").show()
+	get_tree().paused = true
 	self.queue_free()
 	
 	pass

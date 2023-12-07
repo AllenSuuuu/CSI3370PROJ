@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bnb4rp21fv6kf"]
+[gd_scene load_steps=36 format=3 uid="uid://bnb4rp21fv6kf"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_bnns0"]
 [ext_resource type="Texture2D" uid="uid://riq0bcd0ldar" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_ccixb"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://vkkjlktu4wfp" path="res://Environment/Spike.tscn" id="10_4pyus"]
 [ext_resource type="Script" path="res://Scenes/TraderMenu.gd" id="11_rx7n4"]
 [ext_resource type="PackedScene" uid="uid://4koc6lt3jsh1" path="res://Collectables/Gem.tscn" id="11_usxo2"]
+[ext_resource type="Script" path="res://Scenes/LoseScreen.gd" id="12_s4adb"]
+[ext_resource type="Script" path="res://Scenes/WinScreen.gd" id="12_tomyq"]
 [ext_resource type="Script" path="res://Scenes/CloseDungeonTrigger.gd" id="15_tu3ih"]
 [ext_resource type="PackedScene" uid="uid://3s5qbjj8pmnp" path="res://Collectables/DoubleJumpBoots.tscn" id="16_tku4r"]
 [ext_resource type="PackedScene" uid="uid://bjjb5edqxakaj" path="res://Entities/Checkpoint.tscn" id="17_iv304"]
@@ -583,7 +585,7 @@ texture = ExtResource("3_l5iw5")
 [node name="Player" type="Node2D" parent="GameController/Game"]
 
 [node name="Player" parent="GameController/Game/Player" instance=ExtResource("4_0addx")]
-position = Vector2(2403, 118)
+position = Vector2(43, 265)
 
 [node name="Mobs" type="Node2D" parent="GameController/Game"]
 
@@ -740,6 +742,83 @@ text = "Armor1"
 layout_mode = 2
 text = "Armor2"
 
+[node name="WinScreen" type="Control" parent="GameController/Game/UI"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -154.545
+offset_bottom = -154.545
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_tomyq")
+
+[node name="MarginContainer" type="MarginContainer" parent="GameController/Game/UI/WinScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -30.5
+offset_right = 66.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameController/Game/UI/WinScreen/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameController/Game/UI/WinScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "You Win!"
+
+[node name="ReturnToMenuButton" type="Button" parent="GameController/Game/UI/WinScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Return To Menu"
+
+[node name="LoseScreen" type="Control" parent="GameController/Game/UI"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_s4adb")
+
+[node name="MarginContainer" type="MarginContainer" parent="GameController/Game/UI/LoseScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -167.53
+offset_right = 82.5
+offset_bottom = -106.53
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameController/Game/UI/LoseScreen/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameController/Game/UI/LoseScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "You Died. Game Over"
+
+[node name="ReturnToMenuButton" type="Button" parent="GameController/Game/UI/LoseScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Return To Menu"
+
+[node name="RespawnButton" type="Button" parent="GameController/Game/UI/LoseScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Respawn"
+
 [node name="Collectables" type="Node2D" parent="GameController/Game"]
 script = SubResource("GDScript_woffd")
 
@@ -878,6 +957,9 @@ scale = Vector2(4.05, 29.38)
 [connection signal="pressed" from="GameController/Game/UI/PauseMenu/MarginContainer/VBoxContainer/QuitButton" to="GameController/Game/UI/PauseMenu" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer/BuyArmor1Button" to="GameController/Game/Mobs/Trader" method="_on_buy_armor_1_button_pressed"]
 [connection signal="pressed" from="GameController/Game/UI/TraderMenu/MarginContainer/VBoxContainer/BuyArmor2Button" to="GameController/Game/Mobs/Trader" method="_on_buy_armor_2_button_pressed"]
+[connection signal="pressed" from="GameController/Game/UI/WinScreen/MarginContainer/VBoxContainer/ReturnToMenuButton" to="GameController/Game/UI/WinScreen" method="_on_return_to_menu_button_pressed"]
+[connection signal="pressed" from="GameController/Game/UI/LoseScreen/MarginContainer/VBoxContainer/ReturnToMenuButton" to="GameController/Game/UI/LoseScreen" method="_on_return_to_menu_button_pressed"]
+[connection signal="pressed" from="GameController/Game/UI/LoseScreen/MarginContainer/VBoxContainer/RespawnButton" to="GameController/Game/Player/Player" method="_on_respawn_button_pressed"]
 [connection signal="timeout" from="GameController/Game/Collectables/Timer" to="GameController/Game/Collectables" method="_on_timer_timeout"]
 [connection signal="body_entered" from="GameController/Game/Environment/SecretArea" to="GameController/Game/Environment/SecretArea" method="_on_body_entered"]
 [connection signal="body_exited" from="GameController/Game/Environment/SecretArea" to="GameController/Game/Environment/SecretArea" method="_on_body_exited"]

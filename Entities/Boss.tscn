@@ -24,7 +24,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_pt67h")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 5.0
 }, {
@@ -83,7 +83,7 @@ shape = SubResource("RectangleShape2D_7wis5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5q3vq")
-animation = &"Death"
+animation = &"Idle"
 
 [node name="PotionTimer" type="Timer" parent="."]
 autostart = true

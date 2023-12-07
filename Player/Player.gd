@@ -81,18 +81,30 @@ func _physics_process(delta):
 	
 	
 	if Game.playerHP <= 0:
-		var checkpoint = Game.currentCheckpoint
+		death()
+	
+	pass
+
+
+func death():
+	get_tree().paused = true
+	$"../../UI/LoseScreen".show()
+	
+	Game.playerHP = 10
+	Game.Gold = 0
+	Game.hasJumpBoots = false
+	
+	pass
+
+
+func respawn():
+	var checkpoint = Game.currentCheckpoint
 		
-		if (checkpoint == null):
-			queue_free()
-			get_tree().change_scene_to_file("res://Scenes/main.tscn")
-		else:
-			goToCheckpoint()
-		
-		Game.playerHP = 10
-		Game.Gold = 0
-		Game.hasJumpBoots = false
-		
+	if (checkpoint == null):
+		queue_free()
+		get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	else:
+		goToCheckpoint()
 	
 	pass
 
@@ -122,5 +134,13 @@ func _on_sword_hit_body_entered(body):
 	var boss = "Boss"
 	if (boss in body.name || zombie in body.name):
 		get_node("../../Mobs/" + body.name).takeDamage()
+	
+	pass # Replace with function body.
+
+
+func _on_respawn_button_pressed():
+	respawn()
+	$"../../UI/LoseScreen".hide()
+	get_tree().paused = false
 	
 	pass # Replace with function body.

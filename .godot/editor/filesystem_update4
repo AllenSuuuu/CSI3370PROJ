@@ -1,6 +1,6 @@
+res://Scenes/LoseScreen.gd
 res://Scenes/world.tscn
 res://Player/Player.gd
-res://Scenes/SettingsMenu.gd
 res://Collectables/Gem.tscn
 res://Entities/Checkpoint.tscn
 res://Entities/Zombie.tscn
@@ -13,4 +13,5 @@ res://Scenes/BG.tscn
 res://Scenes/main.tscn
 res://Scenes/SettingsMenu.tscn
 res://Global/Game.gd
-res://Entities/Zombie.gd
+res://Scenes/WinScreen.gd
+res://Entities/Boss.gd
